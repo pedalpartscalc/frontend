@@ -5,6 +5,7 @@
   import Input from "./lib/Input.svelte";
   import Error from "./lib/Error.svelte";
   import Select from "./lib/Select.svelte";
+  import AvailableParts from "./AvailableParts.svelte";
 
   let form = {
     name: {
@@ -34,6 +35,8 @@
     Find out what guitar pedals you can build with the parts you have on hand.
   </h3>
 
+  <AvailableParts />
+
   <Form {form} on:submit={onSubmit} bind:this={formEl}>
     <div>
       <Input label="Name" name="name" />
@@ -48,4 +51,3 @@
     <button type="submit">Submit</button>
   </Form>
 </main>
-<!-- ... -->
