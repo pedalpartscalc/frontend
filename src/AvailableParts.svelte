@@ -15,11 +15,9 @@
 
 {#if parts}
   {#each parts as part}
-    <ul>
-      <li>
-        <Part {part} />
-      </li>
-    </ul>
+    <div class="container mx-auto">
+      <Part {part} />
+    </div>
   {/each}
 {:else}
   <p class="loading">loading...</p>
