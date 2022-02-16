@@ -21,7 +21,6 @@
   let formEl;
 
   const saveToApi = async (data) => {
-    data.quantity = parseInt(data.quantity);
     await fetch(`http://localhost:8000/parts/${modalPart?.id}`, {
       method: "PUT",
       mode: "cors",
@@ -32,12 +31,28 @@
     });
   };
 
+  const createNewPart = async (data) => {
+    await fetch(`http://localhost:8000/parts/`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  };
+
   const onSubmit = async (e) => {
     if (e?.detail?.valid) {
-      console.log(e.detail.data);
-      await saveToApi(e?.detail?.data);
-      setTimeout(() => formEl.reset(), 1000);
-      // send answer to API
+      const data = e?.detail?.data;
+      if (!data) return;
+      data.quantity = parseInt(data.quantity);
+      if (!modalPart) {
+        await createNewPart(data);
+      } else {
+        await saveToApi(data);
+      }
+      // setTimeout(() => formEl.reset(), 1000);
       getModal("part_edit_modal").close("");
     } else {
       console.log("Invalid Form");
@@ -47,7 +62,9 @@
 
 <Modal id="part_edit_modal">
   <div class="flex flex-col content-center align-middle">
-    <div class="text-lg text-center pb-2">Edit Part</div>
+    <div class="text-lg text-center pb-2">
+      {#if !!modalPart}Edit Part{:else}New Part{/if}
+    </div>
     <Form {form} on:submit={onSubmit} bind:this={formEl}>
       <div>
         <Input label="Name" name="part_name" value={modalPart?.part_name} />

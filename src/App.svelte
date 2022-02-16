@@ -2,7 +2,7 @@
   import AvailableParts from "./AvailableParts.svelte";
 
   import { getModal } from "./lib/Modal.svelte";
-  import PartEditModal from "./PartEditModal.svelte";
+  import PartAddEditModal from "./PartAddEditModal.svelte";
 
   let modalPart;
 
@@ -27,7 +27,7 @@
   <AvailableParts {openModal} />
 </main>
 
-<PartEditModal {modalPart} />
+<PartAddEditModal {modalPart} />
 
 <!-- <Modal id="second">
   Inner window

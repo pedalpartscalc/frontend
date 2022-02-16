@@ -1,10 +1,6 @@
 <script>
   export let part;
   export let openModal;
-
-  import { getContext } from "svelte";
-  // import { modal } from "./store";
-  import PartEditContent from "./PartEditModal.svelte";
 </script>
 
 <tr>
