@@ -8,6 +8,7 @@
   import Select from "./lib/Select.svelte";
   import Modal, { getModal } from "./lib/Modal.svelte";
   import { PART_TYPES } from "./constants";
+  import { availableParts } from "./store";
 
   let form = {
     name: {
@@ -21,6 +22,12 @@
   let formEl;
 
   const saveToApi = async (data) => {
+    availableParts.update((parts) => {
+      const idx = parts.findIndex((part) => part.id === modalPart?.id);
+      parts[idx] = data;
+      console.log(parts);
+      return parts;
+    });
     await fetch(`http://localhost:8000/parts/${modalPart?.id}`, {
       method: "PUT",
       mode: "cors",
@@ -32,6 +39,7 @@
   };
 
   const createNewPart = async (data) => {
+    availableParts.update((parts) => [...parts, data]);
     await fetch(`http://localhost:8000/parts/`, {
       method: "POST",
       mode: "cors",
