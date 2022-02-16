@@ -1,6 +1,10 @@
 <script>
-  // create a prop
   export let part;
+  export let openModal;
+
+  import { getContext } from "svelte";
+  // import { modal } from "./store";
+  import PartEditContent from "./PartEditContent.svelte";
 </script>
 
 <tr>
@@ -16,6 +20,9 @@
     {part.quantity}
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <a href="/" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+    <button
+      on:click={openModal(part)}
+      class="text-indigo-600 hover:text-indigo-900">Edit</button
+    >
   </td>
 </tr>

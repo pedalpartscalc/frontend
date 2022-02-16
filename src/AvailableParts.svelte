@@ -1,4 +1,6 @@
 <script>
+  export let openModal;
+
   import { onMount } from "svelte";
   import Part from "./Part.svelte";
   // define the data holding variable
@@ -46,7 +48,7 @@
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
                 {#each parts as part}
-                  <Part {part} />
+                  <Part {part} {openModal} />
                 {/each}
               </tbody>
             </table>
