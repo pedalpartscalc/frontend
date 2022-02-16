@@ -4,7 +4,7 @@
 
   import { getContext } from "svelte";
   // import { modal } from "./store";
-  import PartEditContent from "./PartEditContent.svelte";
+  import PartEditContent from "./PartEditModal.svelte";
 </script>
 
 <tr>

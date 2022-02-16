@@ -3,8 +3,9 @@
   export let type = "text";
   export let label;
   export let name;
+  export let value: string = "";
   const { onBlur } = getContext("form");
 </script>
 
 <label for={name}>{label}</label>
-<input {name} {type} on:blur={onBlur} />
+<input {name} {type} {value} on:blur={onBlur} />
