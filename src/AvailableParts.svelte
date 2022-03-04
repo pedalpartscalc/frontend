@@ -5,14 +5,9 @@
   import Part from "./Part.svelte";
   import { getModal } from "./lib/Modal.svelte";
   import { availableParts } from "./store";
-  import { getParts } from "./services/external-api-service";
+  import { getParts } from "./services/api";
 
   onMount(async () => {
-    // await fetch(`http://localhost:8000/parts`)
-    //   .then((r) => r.json())
-    //   .then((data) => {
-    //     availableParts.set(data);
-    //   });
     await getParts().then((data) => {
       console.log(data);
       availableParts.set(data);

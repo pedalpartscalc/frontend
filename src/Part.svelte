@@ -1,5 +1,6 @@
 <script>
   import { availableParts } from "./store";
+  import {deleteAvailablePart} from "./services/api";
   export let part;
   export let openModal;
 
@@ -11,9 +12,7 @@
     availableParts.update((parts) => {
       return parts.filter((p) => p.id !== part.id);
     });
-    await fetch(`http://localhost:8000/parts/${part.id}`, {
-      method: "DELETE",
-    });
+    await deleteAvailablePart(part.id);
   };
 </script>
 
