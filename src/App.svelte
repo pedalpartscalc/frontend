@@ -1,8 +1,13 @@
 <script lang="ts">
-  import AvailableParts from "./AvailableParts.svelte";
+  import { onMount } from "svelte";
 
+  import AvailableParts from "./AvailableParts.svelte";
   import { getModal } from "./lib/Modal.svelte";
   import PartAddEditModal from "./PartAddEditModal.svelte";
+  import NavBar from "./components/nav-bar.svelte";
+  import Loader from "./components/loader.svelte";
+
+  import { useAuth0 } from "./services/auth0";
 
   let modalPart;
 
@@ -10,8 +15,48 @@
     modalPart = part;
     getModal("part_edit_modal").open();
   }
+
+  let {
+    auth0Client,
+    isLoading,
+    isAuthenticated,
+    user,
+    login,
+    initializeAuth0,
+    createAuth0Client,
+  } = useAuth0;
+
+  const authenticationGuard = (ctx, next) => {
+    if ($isAuthenticated) {
+      next();
+    } else {
+      login({ appState: { targetUrl: ctx.pathname } });
+    }
+  };
+
+  const onRedirectCallback = (appState) => {
+    window.history.replaceState(
+      {},
+      document.title,
+      appState && appState.targetUrl
+        ? appState.targetUrl
+        : window.location.pathname
+    );
+  };
+
+  onMount(async () => {
+    await initializeAuth0({ onRedirectCallback });
+  });
 </script>
 
+{#if $isLoading}
+  <div class="page-layout">
+    <Loader />
+  </div>
+{/if}
+
+{#if !$isLoading}
+<NavBar />
 <main class="container max-w-3xl mx-auto">
   <div class="text-center py-8">
     <h1
@@ -29,15 +74,8 @@
 
 <PartAddEditModal {modalPart} />
 
-<!-- <Modal id="second">
-  Inner window
-  <button class="green" on:click={() => getModal("second").close(1)}>
-    Select 1
-  </button>
-  <button class="green" on:click={() => getModal("second").close(2)}>
-    Select 2
-  </button>
-</Modal> -->
+{/if}
+
 <style global lang="postcss">
   @tailwind base;
   @tailwind components;
