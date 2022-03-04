@@ -2,8 +2,8 @@
   import { onMount } from "svelte";
 
   import AvailableParts from "./AvailableParts.svelte";
-  import { getModal } from "./lib/Modal.svelte";
   import PartAddEditModal from "./PartAddEditModal.svelte";
+  import {getModal} from "./lib/Modal.svelte";
   import NavBar from "./components/nav-bar.svelte";
   import Loader from "./components/loader.svelte";
 
