@@ -79,3 +79,10 @@ export const getPedal = async (id: number): Promise<any> => {
     method: "GET",
   });
 };
+
+export const getAvailablePedals = async (): Promise<Array<any>> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/available`,
+    method: "GET",
+  });
+};

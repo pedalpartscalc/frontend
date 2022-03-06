@@ -9,7 +9,7 @@
 
   import { useAuth0 } from "./services/auth0";
 
-  import {getPedal} from "./services/api";
+  import {getAvailablePedals} from "./services/api";
 
   let modalPart;
 
@@ -48,7 +48,7 @@
 
   onMount(async () => {
     await initializeAuth0({ onRedirectCallback });
-    const pedal = await getPedal(1);
+    const pedal = await getAvailablePedals();
     console.log(pedal);
   });
 </script>
