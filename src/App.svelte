@@ -9,6 +9,8 @@
 
   import { useAuth0 } from "./services/auth0";
 
+  import {getPedal} from "./services/api";
+
   let modalPart;
 
   function openModal(part) {
@@ -46,6 +48,8 @@
 
   onMount(async () => {
     await initializeAuth0({ onRedirectCallback });
+    const pedal = await getPedal(1);
+    console.log(pedal);
   });
 </script>
 

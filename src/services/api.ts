@@ -72,3 +72,10 @@ export const deleteAvailablePart = async (id: number): Promise<void> => {
     method: "DELETE",
   });
 };
+
+export const getPedal = async (id: number): Promise<any> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/${id}`,
+    method: "GET",
+  });
+};
