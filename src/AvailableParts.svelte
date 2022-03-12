@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let openModal;
 
   import { onMount } from "svelte";
@@ -6,14 +6,9 @@
   import { getModal } from "./lib/Modal.svelte";
   import { availableParts } from "./store";
   import { getParts } from "./services/api";
-
-  onMount(async () => {
-    await getParts().then((data) => {
-      console.log(data);
-      availableParts.set(data);
-    });
-  });
+  import { writable } from "svelte/store";
 </script>
+
 
 <div class="container py-4">
   <div
@@ -23,6 +18,9 @@
       <div
         class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
       >
+        {#if $availableParts.length === 0}
+          <div class="align-center justify-center text-center">No parts available. Would you like to add one?</div>
+        {:else}
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
@@ -52,6 +50,7 @@
             {/each}
           </tbody>
         </table>
+        {/if}
       </div>
     </div>
     <div class="py-4 inline-flex justify-center min-w-full sm:px-6 lg:px-8">

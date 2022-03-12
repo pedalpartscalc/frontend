@@ -8,8 +8,12 @@
   import Loader from "./components/loader.svelte";
 
   import { useAuth0 } from "./services/auth0";
+  import {getAvailablePedals, getParts} from "./services/api";
+  import { availableParts } from "./store";
+import { writable } from "svelte/store";
+import Error from "./lib/Error.svelte";
 
-  import {getAvailablePedals} from "./services/api";
+  const loadingError = writable(false);
 
   let modalPart;
 
@@ -46,10 +50,26 @@
     );
   };
 
+  const fetchAvailableParts = async () => {
+    const parts = await getParts();
+    availableParts.set(parts); 
+  };
+
   onMount(async () => {
     await initializeAuth0({ onRedirectCallback });
-    const pedal = await getAvailablePedals();
-    console.log(pedal);
+    try {
+      await fetchAvailableParts();
+    } catch (e: any) {
+      console.log(e)
+      if (e === "Error: Login required") {
+        login({ appState: { targetUrl: "/" } });
+        await fetchAvailableParts();
+      } else {
+        loadingError.set(true);
+      }
+    }
+    // const pedal = await getAvailablePedals();
+    // console.log(pedal);
   });
 </script>
 
@@ -57,9 +77,9 @@
   <div class="page-layout">
     <Loader />
   </div>
-{/if}
-
-{#if !$isLoading}
+{:else if $loadingError}
+<div>Loading error.</div>
+{:else}
 <NavBar />
 <main class="container max-w-3xl mx-auto">
   <div class="text-center py-8">

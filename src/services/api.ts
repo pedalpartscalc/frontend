@@ -31,10 +31,10 @@ const makeRequest = async (options) => {
     return data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      return error.response.data;
+      throw new Error(error.response.data);
     }
 
-    return error.message;
+    throw new Error(error.message);
   }
 };
 
