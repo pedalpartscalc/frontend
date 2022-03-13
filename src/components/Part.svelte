@@ -1,6 +1,6 @@
 <script>
-  import { availableParts } from "./store";
-  import {deleteAvailablePart} from "./services/api";
+  import { availableParts } from "../store";
+  import { deleteAvailablePart } from "../services/api";
   export let part;
   export let openModal;
 

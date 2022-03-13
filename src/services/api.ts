@@ -1,7 +1,11 @@
 import axios from "axios";
-import { writable } from "svelte/store";
 import { useAuth0 } from "./auth0";
-import type { AvailablePart, NewAvailablePart } from "../types";
+import type {
+  AvailablePart,
+  NewAvailablePart,
+  Pedal,
+  NewPedal,
+} from "../types";
 
 export const AccessControlLevel = {
   PUBLIC: "public",
@@ -27,6 +31,7 @@ const makeRequest = async (options) => {
     const response = await axios(options);
 
     const { data } = response;
+    console.log(`API sent: ${data}`);
 
     return data;
   } catch (error) {
@@ -80,9 +85,35 @@ export const getPedal = async (id: number): Promise<any> => {
   });
 };
 
+export const getPedals = async (): Promise<Pedal[]> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals`,
+    method: "GET",
+  });
+};
+
 export const getAvailablePedals = async (): Promise<Array<any>> => {
   return makeRequest({
     url: `${apiServerUrl}/api/pedals/available`,
     method: "GET",
+  });
+};
+
+export const createPedal = async (pedal: NewPedal): Promise<number> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals`,
+    method: "POST",
+    data: pedal,
+  });
+};
+
+export const updatePedal = async (
+  id: number,
+  pedal: NewPedal
+): Promise<void> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/${id}`,
+    method: "PUT",
+    data: pedal,
   });
 };
