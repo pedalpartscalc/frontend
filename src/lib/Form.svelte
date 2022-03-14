@@ -70,7 +70,6 @@
   form {
     display: flex;
     flex-direction: column;
-    width: 300px;
   }
 
   :global(form > div) {

@@ -6,7 +6,13 @@
   const { onBlur } = getContext("form");
 </script>
 
-<label for={name}>{label}</label>
-<select {name} on:blur={onBlur}>
-  <slot />
-</select>
+<div class="flex flex-row justify-between">
+  <div>
+    <label for={name}>{label}</label>
+  </div>
+  <div>
+    <select {name} on:blur={onBlur}>
+      <slot />
+    </select>
+  </div>
+</div>

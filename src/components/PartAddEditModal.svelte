@@ -55,7 +55,7 @@
 </script>
 
 <Modal id="part_edit_modal">
-  <div class="flex flex-col content-center align-middle">
+  <div class="flex flex-col content-center align-middle w-6/12">
     <div class="text-lg text-center pb-2">
       {#if !!modalPart}Edit Part{:else}New Part{/if}
     </div>

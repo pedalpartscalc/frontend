@@ -7,5 +7,11 @@
   const { onBlur } = getContext("form");
 </script>
 
-<label for={name}>{label}</label>
-<input {name} {type} {value} on:blur={onBlur} />
+<div class="flex flex-row justify-between">
+  <div>
+    <label for={name}>{label}</label>
+  </div>
+  <div>
+    <input {name} {type} {value} on:blur={onBlur} />
+  </div>
+</div>
