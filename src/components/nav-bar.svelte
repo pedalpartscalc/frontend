@@ -101,7 +101,7 @@
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a
-              href="/"
+              href="/home"
               class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
               aria-current="page">Available Pedals</a
             >
@@ -113,7 +113,7 @@
             >
 
             <a
-              href="#"
+              href="/pedals"
               class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >Pedal Editor</a
             >
@@ -191,27 +191,21 @@
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <a
-          href="#"
+          href="/home"
           class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          aria-current="page">Dashboard</a
+          aria-current="page">Available Pedals</a
         >
 
         <a
-          href="#"
+          href="/parts"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >Team</a
+          >Parts Box</a
         >
 
         <a
-          href="#"
+          href="/pedals"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >Projects</a
-        >
-
-        <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >Calendar</a
+          >Pedal Editor</a
         >
       </div>
     </div>
