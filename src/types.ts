@@ -28,6 +28,12 @@ export interface RequiredPart {
   quantity: number;
 }
 
+export interface NewRequiredPart {
+  part_name: string;
+  part_kind: PartType;
+  quantity: number;
+}
+
 export enum PedalKind {
   OVERDRIVE = "Overdrive",
 }

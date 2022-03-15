@@ -5,6 +5,7 @@ import type {
   NewAvailablePart,
   Pedal,
   NewPedal,
+  NewRequiredPart,
 } from "../types";
 
 export const AccessControlLevel = {
@@ -115,5 +116,16 @@ export const updatePedal = async (
     url: `${apiServerUrl}/api/pedals/${id}`,
     method: "PUT",
     data: pedal,
+  });
+};
+
+export const createRequiredPart = async (
+  pedal_id: number,
+  part: NewRequiredPart
+): Promise<void> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/${pedal_id}/parts`,
+    method: "POST",
+    data: part,
   });
 };
