@@ -5,6 +5,7 @@
   import { getModal } from "../lib/Modal.svelte";
   import AvailableParts from "../components/AvailableParts.svelte";
   import PartAddEditModal from "../components/PartAddEditModal.svelte";
+  import NavBar from "../components/NavBar.svelte";
 
   import { getParts } from "../services/api";
   import { useAuth0 } from "../services/auth0";
@@ -48,6 +49,7 @@
   });
 </script>
 
+<NavBar />
 <main class="container max-w-3xl mx-auto">
   <div class="text-center py-8">
     <h1

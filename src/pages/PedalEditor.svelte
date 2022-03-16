@@ -6,8 +6,11 @@
 
   import { getPedals } from "../services/api";
   import { useAuth0 } from "../services/auth0";
+
   import PedalComponent from "../components/pedals/Pedal.svelte";
   import PedalAddEditModal from "../components/pedals/PedalAddEditModal.svelte";
+  import NavBar from "../components/NavBar.svelte";
+
   import { pedals } from "../store";
 
   const loadingError = writable(false);
@@ -37,6 +40,7 @@
   });
 </script>
 
+<NavBar />
 <main class="container max-w-3xl mx-auto">
   <div class="text-center py-8">
     <h1
