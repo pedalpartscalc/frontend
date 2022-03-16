@@ -2,6 +2,7 @@
   import { getContext } from "svelte";
   export let label = null;
   export let name;
+  export let value = null;
   const { onBlur } = getContext("form");
 </script>
 
@@ -11,13 +12,13 @@
       <label for={name}>{label}</label>
     </div>
     <div>
-      <select {name} on:blur={onBlur}>
+      <select {name} {value} on:blur={onBlur}>
         <slot />
       </select>
     </div>
   </div>
 {:else}
-  <select class="mx-2" {name} on:blur={onBlur}>
+  <select class="mx-2" {name} {value} on:blur={onBlur}>
     <slot />
   </select>
 {/if}

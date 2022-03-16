@@ -1,5 +1,7 @@
-import { writable } from "svelte/store";
+import { writable, Writable } from "svelte/store";
+import type { Pedal } from "./types";
 
 export const modal = writable(null);
 export const availableParts = writable([]);
 export const pedals = writable([]);
+export const modalPedal: Writable<Pedal | null> = writable(null);

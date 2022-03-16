@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Pedal } from "../../types";
+  import type { Pedal } from "../../types";
+  import { modalPedal } from "../../store";
 
   export let pedal: Pedal;
   export let openModal;
@@ -21,7 +22,10 @@
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     <button
-      on:click={openModal(pedal)}
+      on:click={() => {
+        modalPedal.set(pedal);
+        openModal();
+      }}
       class="px-2 border-none text-indigo-600 hover:text-indigo-900"
       >Edit</button
     >

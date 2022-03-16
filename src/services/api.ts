@@ -32,7 +32,7 @@ const makeRequest = async (options) => {
     const response = await axios(options);
 
     const { data } = response;
-    console.log(`API sent: ${data}`);
+    console.log(`API sent: ${JSON.stringify(data)}`);
 
     return data;
   } catch (error) {
@@ -127,5 +127,15 @@ export const createRequiredPart = async (
     url: `${apiServerUrl}/api/pedals/${pedal_id}/parts`,
     method: "POST",
     data: part,
+  });
+};
+
+export const deleteRequiredPart = async (
+  pedal_id: number,
+  id: number
+): Promise<void> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/${pedal_id}/parts/${id}`,
+    method: "DELETE",
   });
 };

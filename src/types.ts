@@ -1,8 +1,8 @@
 export enum PartType {
-  TRANSISTOR = "transistor",
-  DIODE = "diode",
-  RESISTOR = "resistor",
-  CAPACITOR = "capacitor",
+  TRANSISTOR = "Transistor",
+  DIODE = "Diode",
+  RESISTOR = "Resistor",
+  CAPACITOR = "Capacitor",
 }
 
 export const PART_TYPES = Object.values(PartType);

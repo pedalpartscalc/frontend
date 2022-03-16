@@ -1,22 +1,29 @@
 <script lang="ts">
-  import { writable } from "svelte/store";
+  import { derived, writable, Readable, Writable } from "svelte/store";
+  import _ from "lodash";
 
-  import { Pedal, PEDAL_KINDS, PART_TYPES, NewRequiredPart } from "../../types";
+  import {
+    Pedal,
+    RequiredPart,
+    PEDAL_KINDS,
+    PART_TYPES,
+    NewRequiredPart,
+    NewPedal,
+  } from "../../types";
   import { Validators } from "../../lib/Validators";
   import Form from "../../lib/Form.svelte";
   import Input from "../../lib/Input.svelte";
   import Error from "../../lib/Error.svelte";
   import Select from "../../lib/Select.svelte";
   import Modal, { getModal } from "../../lib/Modal.svelte";
-  import { pedals } from "../../store";
+  import { pedals, modalPedal } from "../../store";
   import {
     createPedal,
     updatePedal,
     createRequiredPart,
+    deleteRequiredPart,
   } from "../../services/api";
   import Button from "../lib/Button.svelte";
-
-  export let modalPedal: Pedal;
 
   let form = {
     name: {
@@ -33,40 +40,49 @@
     quantity: string;
   }
 
-  let parts = writable([
-    {
-      name: "",
-      kind: "",
-      quantity: "1",
-    },
-  ]);
+  const startingRequiredParts: Readable<RequiredPart[] | null> = derived(
+    modalPedal,
+    ($modalPedal) => $modalPedal?.required_parts
+  );
+
+  const existingRequiredParts: Readable<RequiredPartsInput[] | null> = derived(
+    modalPedal,
+    ($modalPedal) =>
+      $modalPedal?.required_parts?.map((p) => ({
+        name: p.part_name,
+        kind: p.part_kind,
+        quantity: p.quantity.toString(),
+      }))
+  );
+
+  const emptyRequiredPart: RequiredPartsInput = {
+    name: "",
+    kind: "",
+    quantity: "1",
+  };
+
+  let parts: Writable<RequiredPartsInput[]> = writable(
+    $existingRequiredParts || [emptyRequiredPart]
+  );
+
+  existingRequiredParts.subscribe((p) => {
+    if (p) {
+      parts.set(p);
+    }
+  });
 
   const addInput = () => {
     parts.update((i) => [...i, { name: "", kind: "", quantity: "1" }]);
   };
 
-  const removeInput = () => {
+  const deletePart = (id: number) => {
     parts.update((i) => {
-      i.pop();
+      i.splice(id, 1);
       return i;
     });
   };
 
-  const saveToApi = async (data) => {
-    pedals.update((p) => {
-      const idx = p.findIndex((pedal) => pedal.id === modalPedal?.id);
-      p[idx] = data;
-      return p;
-    });
-    await updatePedal(modalPedal.id, data);
-  };
-
-  const createNewPedal = async (data) => {
-    const pedalData = {
-      name: data.name,
-      kind: data.kind,
-    };
-
+  const formDataToParts = (data: any): NewRequiredPart[] => {
     let partsData = {};
     for (const [k, v] of Object.entries(data)) {
       const matches = k.match(/\d+/);
@@ -84,11 +100,79 @@
       }
     }
 
+    return Object.values(partsData);
+  };
+
+  const fullPartToNew = (p: RequiredPart): NewRequiredPart => {
+    return {
+      part_name: p.part_name,
+      part_kind: p.part_kind,
+      quantity: p.quantity,
+    };
+  };
+
+  const fullPedalToNew = (p: Pedal): NewPedal => {
+    return {
+      name: p.name,
+      kind: p.kind,
+    };
+  };
+
+  const saveToApi = async (data) => {
+    // update local store
+    pedals.update((p) => {
+      const idx = p.findIndex((pedal) => pedal.id === $modalPedal?.id);
+      p[idx] = data; // TODO: serialize the pedal data properly here
+      return p;
+    });
+
+    const apiRequests = [];
+
+    // hit API
+    const pedalData: NewPedal = {
+      name: data.name,
+      kind: data.kind,
+    };
+    if (!_.isEqual(pedalData, fullPedalToNew($modalPedal))) {
+      apiRequests.push(updatePedal($modalPedal.id, pedalData));
+    }
+
+    // For the bulk update to required parts:
+    // - delete any parts that don't match exactly in the form
+    // - create any parts in the form that don't match the existing parts
+    const partsData = formDataToParts(data);
+    for (const e of $startingRequiredParts) {
+      const idx = partsData.findIndex((p) => _.isEqual(p, fullPartToNew(e)));
+      if (idx === -1) {
+        console.log(`Deleting part ${JSON.stringify(fullPartToNew(e))}`);
+        apiRequests.push(deleteRequiredPart($modalPedal.id, e.id));
+      }
+    }
+
+    for (const n of partsData) {
+      const idx = $startingRequiredParts.findIndex((p) =>
+        _.isEqual(fullPartToNew(p), n)
+      );
+      if (idx === -1) {
+        apiRequests.push(createRequiredPart($modalPedal.id, n));
+      }
+    }
+
+    await Promise.all(apiRequests);
+  };
+
+  const createNewPedal = async (data) => {
+    const pedalData: NewPedal = {
+      name: data.name,
+      kind: data.kind,
+    };
+
     pedals.update((p) => [...p, pedalData]);
     const pedalId = await createPedal(pedalData);
 
-    for (const [_, v] of Object.entries(partsData)) {
-      await createRequiredPart(pedalId, v as NewRequiredPart);
+    const partsData = formDataToParts(data);
+    for (const p of partsData) {
+      await createRequiredPart(pedalId, p);
     }
   };
 
@@ -119,13 +203,13 @@
       <div
         class="mx-auto max-w-xs w-full flex flex-col content-center align-middle space-y-2"
       >
-        <Input label="Name" name="name" value={modalPedal?.name} />
+        <Input label="Name" name="name" value={$modalPedal?.name} />
         <Error
           fieldName="name"
           errorKey="required"
           message="Name is required"
         />
-        <Select label="Pedal Type" name="kind" value={modalPedal?.kind}>
+        <Select label="Pedal Type" name="kind" value={$modalPedal?.kind}>
           {#each PEDAL_KINDS as kind}
             <option value={kind}>{kind}</option>
           {/each}
@@ -153,13 +237,19 @@
               {/each}
             </Select>
             <Input name={`quantity_${i}`} type="number" value={part.quantity} />
+            <button
+              on:click={() => {
+                deletePart(i);
+              }}
+              class="mx-2 border-none text-indigo-600 hover:text-indigo-900"
+              >Delete</button
+            >
           </div>
         {/each}
       </div>
 
       <div class="flex flex-row justify-center mt-4">
         <Button color="blue-500" on:click={addInput}>Add Part</Button>
-        <Button on:click={removeInput}>Remove Part</Button>
       </div>
 
       <hr class="mx-2 mt-4" />

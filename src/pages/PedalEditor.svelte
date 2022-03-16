@@ -10,12 +10,9 @@
   import PedalAddEditModal from "../components/pedals/PedalAddEditModal.svelte";
   import { pedals } from "../store";
 
-  let modalPedal;
-
   const loadingError = writable(false);
 
-  const openModal = (pedal) => {
-    modalPedal = pedal;
+  const openModal = () => {
     getModal("pedal_edit_modal").open();
   };
 
@@ -106,4 +103,4 @@
   </div>
 </main>
 
-<PedalAddEditModal {modalPedal} />
+<PedalAddEditModal />
