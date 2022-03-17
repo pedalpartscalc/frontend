@@ -1,5 +1,9 @@
 <script lang="ts">
+  import { useAuth0 } from "../services/auth0";
+
   const year = new Date().getFullYear();
+
+  let { login } = useAuth0;
 </script>
 
 <head>
@@ -251,10 +255,11 @@
                 href="#features"
                 class="
                     font-medium
-                    text-gray-500
-                    dark:text-gray-300
-                    hover:text-gray-900
-                    dark:hover:text-gray-200
+                    text-gradient
+                    lg:bg-gradient-l-orange-dark
+                    lg:hover:bg-gradient-r-orange-dark
+                    visited:text-gray-500
+                    dark:visited:text-gray-300
                     focus:outline-none
                     focus:text-gray-900
                     dark:focus:text-gray-200
@@ -285,14 +290,18 @@
                 Blog
               </a> -->
               <a
-                href="/login"
+                href="/"
+                on:click={() => {
+                  login({ appState: { targetUrl: "/parts" } });
+                }}
                 class="
                     ml-10
                     font-medium
-                    text-gray-500
-                    dark:text-gray-300
-                    hover:text-gray-900
-                    dark:hover:text-gray-200
+                    text-gradient
+                    bg-gradient-l-orange-dark
+                    hover:bg-gradient-r-orange-dark
+                    visited:text-gray-500
+                    dark:visited:text-gray-300
                     focus:outline-none
                     focus:text-gray-900
                     dark:focus:text-gray-200
@@ -304,7 +313,10 @@
                 Login
               </a>
               <a
-                href="/login"
+                href="/"
+                on:click={() => {
+                  login({ appState: { targetUrl: "/parts" } });
+                }}
                 class="
                     ml-10
                     text-lg
@@ -883,7 +895,7 @@
       </div>
     </div>
   </section>
-  <section class="bg-white dark:bg-background_dark">
+  <section id="mail" class="bg-white dark:bg-background_dark pt-8">
     <div class="bg-white dark:bg-background_dark mx-4">
       <div
         class="
@@ -926,8 +938,10 @@
         </p>
         <div class="mt-8 flex justify-center z-10 relative">
           <div class="inline-flex rounded-md shadow">
-            <g-link
-              to="/docs/introduction/"
+            <button
+              on:click={() => {
+                login({ appState: { targetUrl: "/parts" } });
+              }}
               class="
                   w-full
                   flex
@@ -949,7 +963,7 @@
                 "
             >
               Get started <span class="text-xl leading-5 ml-1">&rarr;</span>
-            </g-link>
+            </button>
           </div>
         </div>
         <svg
