@@ -30,9 +30,9 @@ module.exports = {
           DEFAULT: "#f9fcfd",
         },
         autodo: {
-          light: "47daaf",
-          DEFAULT: "#45c9a7",
-          dark: "#30b08f",
+          light: "#ff8119",
+          DEFAULT: "#de751f",
+          dark: "#9c4f11",
         },
         background_light: "#666",
         background_med: "#444",

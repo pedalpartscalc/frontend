@@ -147,26 +147,74 @@
             >
               <div class="flex items-center justify-center w-full md:w-auto">
                 <svg
-                  class="h-24 w-auto md:h-16 text-cool-gray-800 fill-current"
-                  viewBox="0 0 512 512"
-                  aria-labelledby="title"
-                  role="img"
+                  class="h-24 w-auto md:h-16 text-cool-gray-800 fill-current mx-4"
+                  viewBox="0 0 144 144"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <title id="title">auToDo</title>
-                  <defs id="defs14">
-                    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath28">
-                      <path
-                        d="M -191.516 703.517 L 703.516 703.517 L 703.516 -191.518 L -191.516 -191.518 Z"
-                        id="path26"
-                      />
-                    </clipPath>
-                  </defs>
                   <path
-                    clip-path="url(#clipPath28)"
-                    d="M 169.085 368.339 C 167.769 369.879 166.438 371.894 165.222 374.3 Z M 242.576 422.009 L 226.046 403.67 L 233.192 394.617 L 198.272 355.934 L 191.08 364.99 L 174.55 346.647 C 171.024 342.739 165.498 342.883 162.307 346.935 C 159.066 350.981 159.304 357.462 162.833 361.367 L 169.118 368.321 L 169.071 368.321 C 165.404 375.611 163.021 395.046 165.119 397.62 L 146.585 420.96 L 35.972 341.168 L 4.437 381.801 L 155.782 493.132 L 187.269 452.448 L 199.274 437.349 C 201.275 439.826 215.231 431.394 219.662 424.345 L 230.856 436.729 C 234.382 440.634 239.908 440.493 243.146 436.444 C 246.34 432.395 246.102 425.867 242.576 422.009 M 169.085 368.339 C 169.088 368.333 169.088 368.33 169.094 368.327 C 169.094 368.324 169.094 368.321 169.097 368.318 Z M 253.1 369.614 L 260.278 360.585 L 225.335 321.894 L 218.157 330.922 L 201.604 312.595 C 198.084 308.699 192.57 308.825 189.352 312.88 L 189.349 312.88 C 186.129 316.931 186.37 323.436 189.887 327.329 L 257.939 402.682 C 261.456 406.575 266.971 406.449 270.194 402.395 C 273.414 398.343 273.173 391.841 269.656 387.945 Z M 280.163 335.568 L 287.338 326.542 L 252.398 287.85 L 245.22 296.879 L 228.667 278.548 C 225.147 274.652 219.635 274.781 216.412 278.836 C 213.192 282.888 213.433 289.392 216.953 293.285 L 285.002 368.639 C 288.519 372.532 294.034 372.405 297.257 368.351 C 300.477 364.296 300.236 357.794 296.716 353.901 Z M 307.226 301.524 L 314.401 292.495 L 279.461 253.806 L 272.283 262.832 L 255.727 244.504 C 252.213 240.608 246.698 240.738 243.478 244.789 C 240.255 248.844 240.496 255.346 244.013 259.242 L 312.065 334.592 C 315.582 338.488 321.096 338.359 324.317 334.307 C 327.54 330.253 327.299 323.751 323.779 319.855 Z M 334.289 267.477 L 341.463 258.451 L 306.524 219.76 L 299.346 228.788 L 282.79 210.458 C 279.273 206.562 273.758 206.691 270.538 210.746 L 270.538 210.746 C 267.315 214.797 267.559 221.302 271.075 225.198 L 339.128 300.548 C 342.644 304.441 348.159 304.315 351.379 300.26 C 354.603 296.206 354.362 289.704 350.842 285.808 Z M 361.348 233.434 L 368.526 224.405 L 333.583 185.716 L 326.409 194.745 L 309.852 176.414 C 306.335 172.518 300.821 172.647 297.601 176.702 C 294.377 180.753 294.621 187.255 298.138 191.151 L 366.187 266.502 C 369.707 270.398 375.219 270.271 378.442 266.217 C 381.665 262.162 381.424 255.66 377.905 251.767 Z M 482.374 73.234 C 475.249 82.195 462.16 83.691 453.199 76.566 C 444.235 69.441 442.739 56.355 449.864 47.39 C 456.989 38.429 470.078 36.931 479.04 44.056 C 488.001 51.181 489.499 64.27 482.374 73.234 M 491.917 27.855 C 474.024 13.629 447.89 16.617 433.664 34.51 C 423.439 47.376 422.149 64.475 428.857 78.373 C 426.791 78.437 424.72 78.64 422.672 78.966 C 407.894 81.322 394.675 89.52 385.364 101.234 L 379.374 108.77 L 368.453 100.088 C 362.447 95.317 353.624 96.324 348.85 102.33 C 344.075 108.335 345.083 117.158 351.089 121.933 L 371.432 138.104 L 353.471 160.701 L 336.915 142.367 C 333.398 138.474 327.883 138.601 324.663 142.655 C 321.44 146.71 321.681 153.212 325.201 157.105 L 393.253 232.458 C 396.77 236.354 402.285 236.225 405.505 232.17 C 408.728 228.118 408.484 221.614 404.967 217.721 L 388.414 199.39 L 411.69 170.106 L 432.036 186.277 C 438.041 191.051 446.862 190.044 451.636 184.038 C 456.413 178.03 455.403 169.21 449.397 164.432 L 438.476 155.753 L 444.467 148.217 C 453.778 136.5 458.781 121.774 457.744 106.846 C 457.6 104.777 457.333 102.712 456.93 100.687 C 471.979 104.087 488.35 98.975 498.575 86.109 C 512.801 68.216 509.813 42.081 491.917 27.855"
-                    style="fill: rgb(69, 201, 167)"
-                    id="path64"
+                    d="M0 16C0 7.16344 7.16344 0 16 0H128C136.837 0 144 7.16344 144 16V128C144 136.837 136.837 144 128 144H16C7.16344 144 0 136.837 0 128V16Z"
+                    fill="#C4C4C4"
+                  />
+                  <path
+                    d="M8 16C8 12.6863 10.6863 10 14 10H130C133.314 10 136 12.6863 136 16V24C136 27.3137 133.314 30 130 30H14C10.6863 30 8 27.3137 8 24V16Z"
+                    fill="#3F3E3E"
+                  />
+                  <path
+                    d="M8 42C8 39.7909 9.79086 38 12 38H30C32.2091 38 34 39.7909 34 42V48C34 50.2091 32.2091 52 30 52H12C9.79086 52 8 50.2091 8 48V42Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M76 82C76 79.7909 77.7909 78 80 78H98C100.209 78 102 79.7909 102 82V88C102 90.2091 100.209 92 98 92H80C77.7909 92 76 90.2091 76 88V82Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M42 82C42 79.7909 43.7909 78 46 78H64C66.2091 78 68 79.7909 68 82V88C68 90.2091 66.2091 92 64 92H46C43.7909 92 42 90.2091 42 88V82Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M8 82C8 79.7909 9.79086 78 12 78H30C32.2091 78 34 79.7909 34 82V88C34 90.2091 32.2091 92 30 92H12C9.79086 92 8 90.2091 8 88V82Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M76 62C76 59.7909 77.7909 58 80 58H98C100.209 58 102 59.7909 102 62V68C102 70.2091 100.209 72 98 72H80C77.7909 72 76 70.2091 76 68V62Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M42 62C42 59.7909 43.7909 58 46 58H64C66.2091 58 68 59.7909 68 62V68C68 70.2091 66.2091 72 64 72H46C43.7909 72 42 70.2091 42 68V62Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M8 62C8 59.7909 9.79086 58 12 58H30C32.2091 58 34 59.7909 34 62V68C34 70.2091 32.2091 72 30 72H12C9.79086 72 8 70.2091 8 68V62Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M76 42C76 39.7909 77.7909 38 80 38H98C100.209 38 102 39.7909 102 42V48C102 50.2091 100.209 52 98 52H80C77.7909 52 76 50.2091 76 48V42Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M110 82C110 79.7909 111.791 78 114 78H132C134.209 78 136 79.7909 136 82V88C136 90.2091 134.209 92 132 92H114C111.791 92 110 90.2091 110 88V82Z"
+                    fill="#E08315"
+                  />
+                  <path
+                    d="M110 62C110 59.7909 111.791 58 114 58H132C134.209 58 136 59.7909 136 62V68C136 70.2091 134.209 72 132 72H114C111.791 72 110 70.2091 110 68V62Z"
+                    fill="#E08315"
+                  />
+                  <path
+                    d="M110 42C110 39.7909 111.791 38 114 38H132C134.209 38 136 39.7909 136 42V48C136 50.2091 134.209 52 132 52H114C111.791 52 110 50.2091 110 48V42Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M42 42C42 39.7909 43.7909 38 46 38H64C66.2091 38 68 39.7909 68 42V48C68 50.2091 66.2091 52 64 52H46C43.7909 52 42 50.2091 42 48V42Z"
+                    fill="#8A8681"
+                  />
+                  <path
+                    d="M88 123C88 131.837 80.8366 139 72 139C63.1634 139 56 131.837 56 123C56 114.163 63.1634 107 72 107C80.8366 107 88 114.163 88 123Z"
+                    fill="#E5E5E5"
+                  />
+                  <path
+                    d="M85 123C85 130.18 79.1797 136 72 136C64.8203 136 59 130.18 59 123C59 115.82 64.8203 110 72 110C79.1797 110 85 115.82 85 123Z"
+                    fill="#E08315"
                   />
                 </svg>
                 <h2
@@ -184,7 +232,7 @@
                       xl:ml-2
                     "
                 >
-                  auToDo
+                  Pedal Parts Calc
                 </h2>
               </div>
             </div>
@@ -217,7 +265,7 @@
               >
                 About
               </a>
-              <a
+              <!-- <a
                 href="#"
                 class="
                     ml-10
@@ -235,7 +283,7 @@
                   "
               >
                 Blog
-              </a>
+              </a> -->
               <a
                 href="/login"
                 class="
@@ -260,17 +308,17 @@
                 class="
                     ml-10
                     text-lg
-                    font-semibold
+                    font-medium
                     tracking-wide
                     text-white
                     px-4
                     py-1
                     rounded-3xl
-                    bg-autodo-dark
+                    bg-autodo
                     hover:bg-autodo
                   "
               >
-                Start Tracking
+                Start Calculating
               </a>
             </div>
           </nav>
@@ -280,21 +328,25 @@
           class="
               mt-10
               mx-auto
-              max-w-screen-xl
+              max-w-screen-md
               px-4
               sm:mt-12
               sm:px-6
               md:mt-16
               lg:mt-20
               xl:mt-28
+              flex
+              flex-col
+              items-center
+              justify-center
             "
         >
           <div class="text-center">
             <h2
               class="
-                  text-3xl
-                  sm:text-5xl
-                  md:text-6xl
+                  text-2xl
+                  sm:text-4xl
+                  md:text-5xl
                   tracking-tighter
                   leading-tight
                   sm:leading-normal
@@ -302,20 +354,13 @@
                   tracking-wide
                   text-gray-900
                   dark:text-gray-200
+                  max-w-lg
                 "
             >
-              <span class="font-light">Car Maintenance Tracking, </span>
-              <br />
-              <span
-                class="
-                    text-gradient
-                    bg-gradient-l-teal-dark
-                    inline-block
-                    leading-normal
-                    tracking-wide
-                  ">Simplified.</span
-              >
+              Pedals with the Parts You Have on Hand
             </h2>
+          </div>
+          <div class="text-center">
             <p
               class="
                   mt-3
@@ -329,11 +374,11 @@
                   md:max-w-2xl
                 "
             >
-              auToDo helps you keep track of ToDos, Mileage, Expenses and more
-              wherever you go.
+              Input a list of components you have and you'll get a list of
+              pedals you can build.
             </p>
             <div
-              class="mt-10 max-w-md mx-auto sm:flex sm:justify-center md:mt-8"
+              class="mt-16 max-w-md mx-auto sm:flex sm:justify-center md:mt-16"
             >
               <a
                 href="/login"
@@ -342,14 +387,14 @@
                     shadow
                     lg:flex
                     justify-center
-                    px-8
-                    py-3
+                    px-12
+                    py-4
                     text-base
                     leading-6
                     font-medium
                     rounded-md
                     text-white
-                    bg-gradient-l-teal-dark
+                    bg-gradient-l-orange-dark
                     md:py-4
                     md:text-lg
                     md:px-10
@@ -374,203 +419,9 @@
         </div>
       </div>
     </div>
-    <div class="hidden sm:block">
-      <div class="pb-12 bg-white dark:bg-background_dark sm:pb-16">
-        <div class="relative">
-          <div class="absolute inset-0 h-1/2 bg-code dark:bg-background_dark" />
-          <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-              <div
-                class="
-                    rounded-lg
-                    bg-white
-                    dark:bg-background_med
-                    shadow-lg
-                    sm:grid sm:grid-cols-3
-                  "
-              >
-                <g-link
-                  to="/docs/commands/"
-                  class="
-                      group
-                      hover:bg-gradient-b-code
-                      rounded-tl-lg rounded-bl-lg
-                    "
-                >
-                  <div
-                    class="
-                        border-b border-gray-100
-                        dark:border-background_light
-                        p-6
-                        text-center
-                        sm:border-0 sm:border-r
-                      "
-                  >
-                    <p
-                      class="
-                          text-5xl
-                          leading-none
-                          font-extrabold
-                          tracking-wide
-                          text-blue-500
-                        "
-                    >
-                      <svg
-                        class="w-6 lg:w-10 h-20 mx-auto"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="url(#svg-grad1)"
-                      >
-                        <defs>
-                          <linearGradient
-                            id="svg-grad1"
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="0%"
-                          >
-                            <stop offset="0%" stop-color="#5f54f1" />
-                            <stop offset="1000%" stop-color="#4398ee" />
-                          </linearGradient>
-                        </defs>
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1"
-                          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
-                        />
-                      </svg>
-                    </p>
-                    <p
-                      class="
-                          mt-2
-                          text-lg
-                          leading-6
-                          font-medium
-                          text-cool-gray-500
-                          dark:text-gray-200
-                          group-hover:text-gray-700
-                        "
-                    >
-                      Tasks
-                    </p>
-                  </div>
-                </g-link>
-                <g-link
-                  to="/docs/introduction/"
-                  class="group hover:bg-gradient-b-code"
-                >
-                  <div
-                    class="
-                        border-t border-b border-gray-100
-                        dark:border-background_light
-                        p-6
-                        text-center
-                        sm:border-0 sm:border-l sm:border-r
-                      "
-                  >
-                    <p
-                      class="
-                          text-5xl
-                          leading-none
-                          font-extrabold
-                          tracking-wide
-                          text-indigo-600
-                        "
-                    >
-                      <svg
-                        class="w-6 lg:w-10 h-20 mx-auto"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="url(#svg-grad1)"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1"
-                          d="M19.77 7.23l.01-.01-3.72-3.72L15 4.56l2.11 2.11c-.94.36-1.61 1.26-1.61 2.33 0 1.38 1.12 2.5 2.5 2.5.36 0 .69-.08 1-.21v7.21c0 .55-.45 1-1 1s-1-.45-1-1V14c0-1.1-.9-2-2-2h-1V5c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v16h10v-7.5h1.5v5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V9c0-.69-.28-1.32-.73-1.77zM12 10H6V5h6v5zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
-                        />
-                      </svg>
-                    </p>
-                    <p
-                      class="
-                          mt-2
-                          text-lg
-                          leading-6
-                          font-medium
-                          text-cool-gray-500
-                          dark:text-gray-200
-                          group-hover:text-gray-700
-                        "
-                    >
-                      Refuelings
-                    </p>
-                  </div>
-                </g-link>
-                <g-link
-                  to="/starters/"
-                  class="
-                      group
-                      hover:bg-gradient-b-code
-                      rounded-tr-lg rounded-br-lg
-                    "
-                >
-                  <div
-                    class="
-                        border-t border-gray-100
-                        dark:border-background_light
-                        p-6
-                        text-center
-                        sm:border-0 sm:border-l
-                      "
-                  >
-                    <p
-                      class="
-                          text-5xl
-                          leading-none
-                          font-extrabold
-                          tracking-wide
-                          text-indigo-600
-                        "
-                    >
-                      <svg
-                        class="w-6 lg:w-10 h-20 mx-auto"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="url(#svg-grad1)"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1"
-                          d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"
-                        />
-                      </svg>
-                    </p>
-                    <p
-                      class="
-                          mt-2
-                          text-lg
-                          leading-6
-                          font-medium
-                          text-cool-gray-500
-                          dark:text-gray-200
-                          group-hover:text-gray-700
-                        "
-                    >
-                      Stats
-                    </p>
-                  </div>
-                </g-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
   <section id="features">
-    <div class="py-16 overflow-hidden lg:py-24 dark:bg-background_dark">
+    <div class="py-8 overflow-hidden lg:py-8 dark:bg-background_dark">
       <div
         class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl"
       >
@@ -614,38 +465,6 @@
             fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)"
           />
         </svg>
-
-        <div class="relative w-8/12 mx-auto">
-          <h3
-            class="
-                text-center text-3xl
-                leading-8
-                font-extrabold
-                tracking-wide tracking-tight
-                text-gray-900
-                dark:text-gray-200
-                sm:text-4xl
-                sm:leading-10
-              "
-          >
-            Get reminders for your car's routine maintenance that work.
-          </h3>
-          <p
-            class="
-                mt-4
-                mx-auto
-                max-w-3xl
-                text-center
-                lg:text-xl
-                leading-7
-                text-gray-500
-                dark:text-gray-300
-              "
-          >
-            auToDo empowers you with the tools to stay on top of your car's
-            routine maintenance needs.
-          </p>
-        </div>
 
         <div
           class="
@@ -1061,149 +880,15 @@
             </div>
           </div>
         </div>
-
-        <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                                <path
-                                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z">
-                                </path>
-                              </svg> -->
-
-        <!-- <div class="relative mt-12 sm:mt-16 lg:mt-32 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div class="relative">
-              <h4 class="text-2xl leading-8 font-extrabold tracking-wide text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Build Environments
-              </h4>
-              <p class="mt-3 text-lg leading-7 text-gray-500">
-                Custom build scenarios, easily configured in JavaScript.
-              </p>
-              <p class="mt-3 text-base leading-7 text-gray-500">
-                Using fake data locally, but fetching from an API in production? Prettified email markup for your
-                colleagues? All possible.
-              </p>
-    
-              <ul class="mt-10">
-                <li>
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">CLI Commands</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Each environment config enables its own CLI build command, so you can build the same templates in as
-                        many ways as you need.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mt-10">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                          <path
-                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">Opt-in Transformers</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Choose which post-processing transformations Maizzle applies to your HTML emails on a build
-                        environment-basis.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mt-10">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-    
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
-                          <path
-                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">Override from Template</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Define or override data for each template just before it's compiled, through YAML Front Matter
-                        variables.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-    
-            <div class="mt-10 -mx-4 relative lg:mt-0">
-              <svg class="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden" width="784" height="404"
-                fill="none" viewBox="0 0 784 404">
-                <defs>
-                  <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
-                    patternUnits="userSpaceOnUse">
-                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-                  </pattern>
-                </defs>
-                <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
-              </svg>
-              <div
-                class="bg-white rounded-lg shadow-2xl max-w-md max-h-sm sm:max-h-full overflow-hidden mx-4 sm:mx-auto p-6 relative">
-                <div class="overflow-x-scroll sm:overflow-hidden">
-                  TODO: screenshots
-                </div>
-              </div>
-            </div>
-          </div> -->
       </div>
     </div>
   </section>
-  <!-- <section>
-      <div class="bg-gradient-r-code pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div class="relative max-w-lg mx-auto lg:max-w-7xl">
-          <div class="items-center flex flex-wrap justify-between">
-            <div>
-              <h2 class="text-3xl leading-9 tracking-tight font-extrabold tracking-wide text-gray-900 sm:text-4xl sm:leading-10 ">
-                Tutorials
-              </h2>
-              <div class="mt-3 sm:mt-4">
-                <p class="text-xl leading-7 text-gray-500">
-                  Learn how to create HTML emails with Tailwind CSS in Maizzle.
-                </p>
-              </div>
-            </div>
-            <div class="mt-6 lg:mt-0">
-              <g-link to="/guides/" class="group text-base leading-6 font-semibold tracking-wide text-gradient bg-gradient-l-ocean-dark">
-                View all <span class="group-hover:ml-1 transition-all duration-150">&rarr;</span>
-              </g-link>
-            </div>
-          </div>
-          <div class="mt-6 grid gap-16 border-t-2 border-gray-100 pt-10 lg:grid-cols-2 lg:col-gap-5 lg:row-gap-12">
-          </div>
-        </div>
-      </div>
-    </section> -->
   <section class="bg-white dark:bg-background_dark">
     <div class="bg-white dark:bg-background_dark mx-4">
       <div
         class="
             max-w-screen-lg
-            bg-gradient-bl-green-dark
+            bg-gradient-l-orange-dark
             shadow-2xl
             rounded-lg
             mx-auto
@@ -1255,7 +940,7 @@
                   font-medium
                   rounded-md
                   text-white
-                  bg-gradient-l-ocean-light
+                  bg-gradient-l-grey-dark
                   focus:outline-none
                   focus:shadow-outline-indigo
                   md:py-4
@@ -1275,12 +960,12 @@
           viewBox="0 0 1463 360"
         >
           <path
-            class="text-green-500 text-opacity-50"
+            class="text-autodo-light text-opacity-50"
             fill="currentColor"
             d="M-82.673 72l1761.849 672.086-134.327 501.315-1761.85-472.086z"
           />
           <path
-            class="text-green-700 text-opacity-30"
+            class="text-autodo-dark text-opacity-30"
             fill="currentColor"
             d="M-650 544.086L1844.761 72l134.327 501.316-1761.849 472.086z"
           />
@@ -1302,71 +987,10 @@
             lg:px-8
           "
       >
-        <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
-          <div class="px-5 py-2">
-            <g-link
-              to="/guides/"
-              class="
-                  text-base
-                  leading-6
-                  text-gray-500
-                  dark:text-gray-400
-                  hover:text-gray-900
-                  dark:hover:text-gray-200
-                "
-            >
-              Guides
-            </g-link>
-          </div>
-          <div class="px-5 py-2">
-            <g-link
-              to="/starters/"
-              class="
-                  text-base
-                  leading-6
-                  text-gray-500
-                  dark:text-gray-400
-                  hover:text-gray-900
-                  dark:hover:text-gray-200
-                "
-            >
-              Starters
-            </g-link>
-          </div>
-          <div class="px-5 py-2">
-            <a
-              href="https://github.com/autodo-app/autodo"
-              class="
-                  text-base
-                  leading-6
-                  text-gray-500
-                  dark:text-gray-400
-                  hover:text-gray-900
-                  dark:hover:text-gray-200
-                "
-            >
-              Contribute
-            </a>
-          </div>
-        </nav>
-        <div class="mt-8 flex justify-center -mx-6">
-          <g-link
-            to="https://twitter.com/autodoapp/"
-            class="
-                mx-6
-                text-gray-500
-                dark:text-gray-400
-                hover:text-gray-900
-                dark:hover:text-gray-200
-              "
-          >
-            <span class="sr-only">Twitter</span>
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
-              />
-            </svg>
-          </g-link>
+        <!-- <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
+          <p>todo: stick a donate link here or something</p>
+        </nav> -->
+        <div class="mt-4 flex justify-center -mx-6">
           <g-link
             to="https://github.com/autodo-app/autodo"
             class="
@@ -1391,13 +1015,13 @@
           <p
             class="text-center text-sm leading-6 text-gray-500 dark:text-gray-400"
           >
-            &copy; {year} auToDo -
+            &copy; {year} Jonathan Bayless -
             <a
-              href="https://github.com/autodo-app/autodo"
+              href="https://github.com/baylessj/pedalpartscalc"
               class="
                   text-gradient
-                  lg:bg-gradient-l-green-dark
-                  lg:hover:bg-gradient-r-green-dark
+                  lg:bg-gradient-l-orange-dark
+                  lg:hover:bg-gradient-r-orange-dark
                   inline-block
                   leading-normal
                 "
