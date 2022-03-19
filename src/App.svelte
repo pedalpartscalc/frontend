@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
 
-  import NavBar from "./components/NavBar.svelte";
   import Loader from "./components/loader.svelte";
   import Route from "./components/pager/route.svelte";
   import Router from "./components/pager/router.svelte";
@@ -13,6 +12,9 @@
   import Landing from "./pages/Landing.svelte";
   import AvailablePedals from "./pages/AvailablePedals.svelte";
 
+  import { isAdminUser } from "./store";
+
+  import { isAdmin } from "./services/api";
   import { useAuth0 } from "./services/auth0";
 
   const loadingError = writable(false);
@@ -35,6 +37,14 @@
     }
   };
 
+  const adminGuard = (ctx, next) => {
+    if ($isAuthenticated && $isAdminUser) {
+      next();
+    } else {
+      ctx.redirect("/home");
+    }
+  };
+
   const onRedirectCallback = (appState) => {
     window.history.replaceState(
       {},
@@ -47,6 +57,7 @@
 
   onMount(async () => {
     await initializeAuth0({ onRedirectCallback });
+    isAdminUser.set(await isAdmin());
   });
 </script>
 
@@ -119,11 +130,7 @@
       component={PartsBox}
       middleware={[authenticationGuard]}
     />
-    <Route
-      path="/pedals"
-      component={PedalEditor}
-      middleware={[authenticationGuard]}
-    />
+    <Route path="/pedals" component={PedalEditor} middleware={[adminGuard]} />
     <Route path="*" component={NotFound} />
   </Router>
 {/if}

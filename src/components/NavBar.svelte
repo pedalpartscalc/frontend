@@ -4,6 +4,7 @@
   import { quintOut } from "svelte/easing";
   import { useAuth0 } from "../services/auth0";
   import { activeRoute } from "./pager/router.svelte";
+  import { isAdminUser } from "../store";
 
   const { logout } = useAuth0;
 
@@ -196,12 +197,14 @@
                 : inactiveRouteClasses}>Parts Box</a
             >
 
-            <a
-              href="/pedals"
-              class={$activeRoute.path === "/pedals"
-                ? activeRouteClasses
-                : inactiveRouteClasses}>Pedal Editor</a
-            >
+            {#if $isAdminUser}
+              <a
+                href="/pedals"
+                class={$activeRoute.path === "/pedals"
+                  ? activeRouteClasses
+                  : inactiveRouteClasses}>Pedal Editor</a
+              >
+            {/if}
           </div>
         </div>
       </div>

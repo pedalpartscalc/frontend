@@ -139,3 +139,15 @@ export const deleteRequiredPart = async (
     method: "DELETE",
   });
 };
+
+export const isAdmin = async (): Promise<boolean> => {
+  try {
+    await makeRequest({
+      url: `${apiServerUrl}/api/auth/is_admin`,
+      method: "POST",
+    });
+    return true;
+  } catch (e: any) {
+    return false;
+  }
+};

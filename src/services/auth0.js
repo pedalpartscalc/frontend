@@ -1,5 +1,6 @@
 import auth0 from "@auth0/auth0-spa-js";
 import { get, writable } from "svelte/store";
+import { isAdmin } from "./api";
 
 const _useAuth0 = () => {
   const auth0Client = writable(null);
@@ -36,7 +37,6 @@ const _useAuth0 = () => {
   };
 
   const initializeAuth0 = async (config = {}) => {
-    console.log(process.env.AUTH0_DOMAIN);
     await createAuth0Client({
       domain: process.env.AUTH0_DOMAIN,
       client_id: process.env.AUTH0_CLIENT_ID,
