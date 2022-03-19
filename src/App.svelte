@@ -11,6 +11,7 @@
   import NotFound from "./pages/NotFound.svelte";
   import PedalEditor from "./pages/PedalEditor.svelte";
   import Landing from "./pages/Landing.svelte";
+  import AvailablePedals from "./pages/AvailablePedals.svelte";
 
   import { useAuth0 } from "./services/auth0";
 
@@ -108,6 +109,11 @@
 {:else}
   <Router>
     <Route path="/" component={Landing} />
+    <Route
+      path="/home"
+      component={AvailablePedals}
+      middleware={[authenticationGuard]}
+    />
     <Route
       path="/parts"
       component={PartsBox}
