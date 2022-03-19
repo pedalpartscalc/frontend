@@ -7,9 +7,9 @@
   import Error from "../lib/Error.svelte";
   import Select from "../lib/Select.svelte";
   import Modal, { getModal } from "../lib/Modal.svelte";
-  import { PART_TYPES } from "../types";
-  import { availableParts } from "../store";
-  import { createAvailablePart, updateAvailablePart } from "../services/api";
+  import { PART_TYPES } from "../../types";
+  import { availableParts } from "../../store";
+  import { createAvailablePart, updateAvailablePart } from "../../services/api";
 
   let form = {
     name: {

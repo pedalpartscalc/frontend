@@ -3,7 +3,8 @@
 
   import Part from "./Part.svelte";
   import { getModal } from "../lib/Modal.svelte";
-  import { availableParts } from "../store";
+  import { availableParts } from "../../store";
+  import Button from "../lib/Button.svelte";
 </script>
 
 <div class="container py-4">
@@ -52,10 +53,8 @@
       </div>
     </div>
     <div class="py-4 inline-flex justify-center min-w-full sm:px-6 lg:px-8">
-      <button
-        type="button"
-        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
-        on:click={() => getModal("part_edit_modal").open()}>Add New Part</button
+      <Button type="button" on:click={() => getModal("part_edit_modal").open()}
+        >Add New Part</Button
       >
     </div>
   </div>

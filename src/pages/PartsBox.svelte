@@ -2,9 +2,9 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
 
-  import { getModal } from "../lib/Modal.svelte";
-  import AvailableParts from "../components/AvailableParts.svelte";
-  import PartAddEditModal from "../components/PartAddEditModal.svelte";
+  import { getModal } from "../components/lib/Modal.svelte";
+  import AvailableParts from "../components/parts/AvailableParts.svelte";
+  import PartAddEditModal from "../components/parts/PartAddEditModal.svelte";
   import NavBar from "../components/NavBar.svelte";
 
   import { getParts } from "../services/api";

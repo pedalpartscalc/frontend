@@ -6,56 +6,6 @@
   let { login } = useAuth0;
 </script>
 
-<head>
-  <title>Pedal Parts Calculator</title>
-  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/static/favicon-32x32.png" type="image/png" />
-  <link
-    rel="apple-touch-icon"
-    sizes="48x48"
-    href="/icons/icon-48x48.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="72x72"
-    href="/icons/icon-72x72.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="96x96"
-    href="/icons/icon-96x96.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="144x144"
-    href="/icons/icon-144x144.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="192x192"
-    href="/icons/icon-192x192.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="256x256"
-    href="/icons/icon-256x256.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="384x384"
-    href="/icons/icon-384x384.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="512x512"
-    href="/icons/icon-512x512.png?v=dec44f98b636b180cee9fb8274ba0287"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Ubuntu"
-  />
-</head>
-
 <body>
   <section>
     <div class="relative overflow-hidden dark:bg-background_dark">
@@ -326,8 +276,8 @@
                     px-4
                     py-1
                     rounded-3xl
-                    bg-autodo
-                    hover:bg-autodo
+                    bg-ppc
+                    hover:bg-ppc
                   "
               >
                 Start Calculating
@@ -818,8 +768,8 @@
                             dark:text-gray-400
                           "
                       >
-                        Every refueling you log improves auToDo's predictions
-                        about when your car will need maintenance.
+                        Every refueling you log improves ppc's predictions about
+                        when your car will need maintenance.
                       </p>
                     </div>
                   </div>
@@ -974,12 +924,12 @@
           viewBox="0 0 1463 360"
         >
           <path
-            class="text-autodo-light text-opacity-50"
+            class="text-ppc-light text-opacity-50"
             fill="currentColor"
             d="M-82.673 72l1761.849 672.086-134.327 501.315-1761.85-472.086z"
           />
           <path
-            class="text-autodo-dark text-opacity-30"
+            class="text-ppc-dark text-opacity-30"
             fill="currentColor"
             d="M-650 544.086L1844.761 72l134.327 501.316-1761.849 472.086z"
           />
@@ -1006,7 +956,7 @@
         </nav> -->
         <div class="mt-4 flex justify-center -mx-6">
           <g-link
-            to="https://github.com/autodo-app/autodo"
+            to="https://github.com/baylessj/pedalpartscalc"
             class="
                 mx-6
                 text-gray-500

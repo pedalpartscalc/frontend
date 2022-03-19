@@ -29,7 +29,7 @@ module.exports = {
         code: {
           DEFAULT: "#f9fcfd",
         },
-        autodo: {
+        ppc: {
           light: "#ff8119",
           DEFAULT: "#de751f",
           dark: "#9c4f11",

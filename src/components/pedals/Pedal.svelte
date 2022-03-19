@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Pedal } from "../../types";
   import { modalPedal } from "../../store";
+  import TextButton from "../lib/TextButton.svelte";
 
   export let pedal: Pedal;
   export let openModal;
@@ -21,13 +22,11 @@
     {pedal?.required_parts?.length ?? 0}
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <button
+    <TextButton
       on:click={() => {
         modalPedal.set(pedal);
         openModal();
-      }}
-      class="px-2 border-none text-indigo-600 hover:text-indigo-900"
-      >Edit</button
+      }}>Edit</TextButton
     >
     <!-- <button
       on:click={deletePart}
