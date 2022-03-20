@@ -45,7 +45,12 @@
             <div />
           {:else if $availablePedals.length === 0}
             <div class="align-center justify-center text-center">
-              No pedals available. Would you like to add some parts?
+              You can't build any pedals with your components. Go to the <a
+                href="/parts"
+                class="text-gradient
+                bg-gradient-l-orange-dark
+                hover:bg-gradient-r-orange-dark">Parts Box</a
+              > tab to add some parts.
             </div>
           {:else}
             <table class="min-w-full divide-y divide-gray-200">
