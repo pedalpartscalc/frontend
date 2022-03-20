@@ -55,11 +55,8 @@
     <h1
       class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
     >
-      Pedal Parts Calculator
+      Pedal Parts Box
     </h1>
-    <h3 class="text-lg text-gray-800">
-      Find out what guitar pedals you can build with the parts you have on hand.
-    </h3>
   </div>
 
   <AvailableParts {openModal} />
