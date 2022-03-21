@@ -44,6 +44,7 @@ export interface Pedal {
   id: number;
   name: string;
   kind: PedalKind;
+  build_doc_link?: string;
   created_at?: Date;
   updated_at?: Date;
   required_parts?: RequiredPart[];
@@ -52,4 +53,5 @@ export interface Pedal {
 export interface NewPedal {
   name: string;
   kind: PedalKind;
+  build_doc_link?: string;
 }

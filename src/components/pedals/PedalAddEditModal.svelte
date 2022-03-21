@@ -115,6 +115,7 @@
     return {
       name: p.name,
       kind: p.kind,
+      build_doc_link: p.build_doc_link,
     };
   };
 
@@ -165,6 +166,7 @@
     const pedalData: NewPedal = {
       name: data.name,
       kind: data.kind,
+      build_doc_link: data.build_doc_link,
     };
 
     pedals.update((p) => [...p, pedalData]);
@@ -181,7 +183,7 @@
       const data = e?.detail?.data;
       console.log(data);
       if (!data) return;
-      if (!modalPedal) {
+      if (!$modalPedal) {
         await createNewPedal(data);
       } else {
         await saveToApi(data);
@@ -214,6 +216,11 @@
             <option value={kind}>{kind}</option>
           {/each}
         </Select>
+        <Input
+          label="Build Doc Link"
+          name="build_doc_link"
+          value={$modalPedal?.build_doc_link}
+        />
       </div>
 
       <hr class="mx-2 mt-4" />

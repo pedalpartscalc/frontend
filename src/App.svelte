@@ -41,7 +41,7 @@
     if ($isAuthenticated && $isAdminUser) {
       next();
     } else {
-      ctx.redirect("/home");
+      window.location.assign("/home");
     }
   };
 
