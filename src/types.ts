@@ -3,6 +3,7 @@ export enum PartType {
   DIODE = "Diode",
   RESISTOR = "Resistor",
   CAPACITOR = "Capacitor",
+  POLARIZED_CAP = "Polarized Capacitor",
   IC = "IC",
   POTENTIOMETER = "Potentiometer",
   SWITCH = "Switch",
