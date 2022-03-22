@@ -44,6 +44,7 @@ export enum PedalKind {
   MODULATION = "Modulation",
   REVERB = "Reverb",
   COMPRESSOR = "Compressor",
+  BOOST = "Boost",
 }
 
 export const PEDAL_KINDS = Object.values(PedalKind);

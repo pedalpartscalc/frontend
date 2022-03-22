@@ -219,7 +219,7 @@
         <Input
           label="Build Doc Link"
           name="build_doc_link"
-          value={$modalPedal?.build_doc_link}
+          value={$modalPedal?.build_doc_link ?? ""}
         />
       </div>
 
