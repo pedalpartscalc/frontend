@@ -58,7 +58,11 @@
 </script>
 
 <div id="topModal" class:visible bind:this={topDiv} on:click={() => close("")}>
-  <div id="modal" class="overflow-auto" on:click|stopPropagation={() => {}}>
+  <div
+    id="modal"
+    class="flex items-center justify-center"
+    on:click|stopPropagation={() => {}}
+  >
     <div
       class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all w-auto sm:my-8 sm:align-middle"
     >
@@ -78,10 +82,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #4448;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #444;
+    margin: auto;
+    overflow: auto;
   }
 
   .visible {
