@@ -135,6 +135,16 @@
   </Router>
 {/if}
 
+<!-- Hack to keep purgecss from removing the classes for button colors -->
+<div class="hidden">
+  <button
+    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm bg-blue-500 hover:bg-blue-600"
+  />
+  <button
+    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm bg-red-500 hover:bg-red-600"
+  />
+</div>
+
 <style global lang="postcss">
   @tailwind base;
   @tailwind components;
