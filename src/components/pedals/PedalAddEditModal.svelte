@@ -40,9 +40,9 @@
     quantity: string;
   }
 
-  const startingRequiredParts: Readable<RequiredPart[] | null> = derived(
+  const startingRequiredParts: Readable<RequiredPart[]> = derived(
     modalPedal,
-    ($modalPedal) => $modalPedal?.required_parts
+    ($modalPedal) => $modalPedal?.required_parts ?? []
   );
 
   const existingRequiredParts: Readable<RequiredPartsInput[] | null> = derived(

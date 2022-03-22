@@ -21,8 +21,20 @@
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
     {pedal?.required_parts?.length ?? 0}
   </td>
-  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-    {pedal?.build_doc_link ?? ""}
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-12">
+    {#if !!pedal?.build_doc_link}
+      <a
+        class="font-medium
+      text-gradient
+      lg:bg-gradient-l-orange-dark
+      lg:hover:bg-gradient-r-orange-dark
+      visited:text-gray-500
+      dark:visited:text-gray-300"
+        href={pedal.build_doc_link}>{pedal.build_doc_link}</a
+      >
+    {:else}
+      {""}
+    {/if}
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     <TextButton
@@ -38,3 +50,11 @@
     > -->
   </td>
 </tr>
+
+<style>
+  td {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+</style>
