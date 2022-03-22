@@ -6,7 +6,7 @@
   if (color) {
     const hoverColor =
       color.slice(0, -3) + `${parseInt(color.slice(-3)) + 100}`;
-    classes += `bg-${color} hover:bg-${hoverColor}`;
+    classes += ` bg-${color} hover:bg-${hoverColor}`;
   } else {
     classes += "text-gradient bg-gradient-l-orange-dark";
   }
