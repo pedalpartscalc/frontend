@@ -3,6 +3,8 @@ export enum PartType {
   DIODE = "Diode",
   RESISTOR = "Resistor",
   CAPACITOR = "Capacitor",
+  IC = "IC",
+  POTENTIOMETER = "Potentiometer",
 }
 
 export const PART_TYPES = Object.values(PartType);
@@ -36,6 +38,12 @@ export interface NewRequiredPart {
 
 export enum PedalKind {
   OVERDRIVE = "Overdrive",
+  DISTORTION = "Distortion",
+  FUZZ = "Fuzz",
+  DELAY = "Delay",
+  MODULATION = "Modulation",
+  REVERB = "Reverb",
+  COMPRESSOR = "Compressor",
 }
 
 export const PEDAL_KINDS = Object.values(PedalKind);

@@ -58,7 +58,7 @@
 </script>
 
 <div id="topModal" class:visible bind:this={topDiv} on:click={() => close("")}>
-  <div id="modal" on:click|stopPropagation={() => {}}>
+  <div id="modal" class="overflow-auto" on:click|stopPropagation={() => {}}>
     <div
       class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all w-auto sm:my-8 sm:align-middle"
     >
