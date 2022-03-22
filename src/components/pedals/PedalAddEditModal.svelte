@@ -133,6 +133,7 @@
     const pedalData: NewPedal = {
       name: data.name,
       kind: data.kind,
+      build_doc_link: data.build_doc_link,
     };
     if (!_.isEqual(pedalData, fullPedalToNew($modalPedal))) {
       apiRequests.push(updatePedal($modalPedal.id, pedalData));
