@@ -12,12 +12,15 @@
   import NavBar from "../components/NavBar.svelte";
   import Button from "../components/lib/Button.svelte";
 
-  import { pedals } from "../store";
+  import { modalPedal, pedals } from "../store";
 
   const loadingError = writable(false);
 
   const openModal = () => {
-    getModal("pedal_edit_modal").open();
+    getModal("pedal_edit_modal").open(() => {
+      modalPedal.set(null);
+      console.log("here");
+    });
   };
 
   let { login } = useAuth0;
@@ -100,8 +103,10 @@
       <div class="py-4 inline-flex justify-center min-w-full sm:px-6 lg:px-8">
         <Button
           type="button"
-          on:click={() => getModal("pedal_edit_modal").open()}
-          >Add New Pedal</Button
+          on:click={() =>
+            getModal("pedal_edit_modal").open(() => {
+              modalPedal.set(null);
+            })}>Add New Pedal</Button
         >
       </div>
     </div>

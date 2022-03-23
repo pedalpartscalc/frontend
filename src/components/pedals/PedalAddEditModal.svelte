@@ -68,6 +68,8 @@
   existingRequiredParts.subscribe((p) => {
     if (p) {
       parts.set(p);
+    } else {
+      parts.set([emptyRequiredPart]);
     }
   });
 
@@ -189,6 +191,7 @@
       } else {
         await saveToApi(data);
       }
+      modalPedal.set(null);
       getModal("pedal_edit_modal").close("");
     } else {
       console.log("Invalid Form");
@@ -206,7 +209,7 @@
       <div
         class="mx-auto max-w-xs w-full flex flex-col content-center align-middle space-y-2"
       >
-        <Input label="Name" name="name" value={$modalPedal?.name} />
+        <Input label="Name" name="name" value={$modalPedal?.name ?? ""} />
         <Error
           fieldName="name"
           errorKey="required"
