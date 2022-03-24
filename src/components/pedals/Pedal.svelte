@@ -25,9 +25,8 @@
     {#if !!pedal?.build_doc_link}
       <a
         class="font-medium
-      text-gradient
-      lg:bg-gradient-l-orange-dark
-      lg:hover:bg-gradient-r-orange-dark
+      text-ppc
+      hover:ppc-dark
       visited:text-gray-500
       dark:visited:text-gray-300"
         href={pedal.build_doc_link}>{pedal.build_doc_link}</a
