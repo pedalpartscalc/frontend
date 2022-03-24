@@ -24,6 +24,7 @@
     deleteRequiredPart,
   } from "../../services/api";
   import Button from "../lib/Button.svelte";
+  import Part from "../parts/Part.svelte";
 
   let form = {
     name: {
@@ -61,27 +62,40 @@
     quantity: "1",
   };
 
-  let parts: Writable<RequiredPartsInput[]> = writable(
-    $existingRequiredParts || [emptyRequiredPart]
+  let parts = $existingRequiredParts || [emptyRequiredPart];
+
+  let highlightedParts = [];
+
+  const findMatches = (names) => {
+    console.log(names);
+    const matches = [];
+    if (names.length < 2) return matches;
+    for (let i = 1; i < names.length; i++) {
+      if (names[i] === names[i - 1] && !matches.includes(names[i])) {
+        matches.push(names[i]);
+      }
+    }
+    return matches;
+  };
+
+  $: highlightedParts = findMatches(
+    parts.map((p) => p.name.toLowerCase()).sort()
   );
 
   existingRequiredParts.subscribe((p) => {
     if (p) {
-      parts.set(p);
+      parts = p;
     } else {
-      parts.set([emptyRequiredPart]);
+      parts = [emptyRequiredPart];
     }
   });
 
   const addInput = () => {
-    parts.update((i) => [...i, { name: "", kind: "", quantity: "1" }]);
+    parts = [...parts, { name: "", kind: "", quantity: "1" }];
   };
 
   const deletePart = (id: number) => {
-    parts.update((i) => {
-      i.splice(id, 1);
-      return i;
-    });
+    parts = parts.splice(id, 1);
   };
 
   const formDataToParts = (data: any): NewRequiredPart[] => {
@@ -239,9 +253,12 @@
           <p class="mx-2">Part Type</p>
           <p class="mx-2">Quantity</p>
         </div>
-        {#each $parts as part, i}
-          <div class="flex flex-row justify-around">
-            <Input name={`part_name_${i}`} value={part.name} />
+        {#each parts as part, i}
+          <div
+            class="flex flex-row justify-around"
+            class:highlighted={highlightedParts.includes(part.name)}
+          >
+            <Input name={`part_name_${i}`} bind:value={part.name} />
             <Select name={`part_kind_${i}`} value={part.kind}>
               {#each PART_TYPES as kind}
                 <option value={kind}>{kind}</option>
@@ -275,3 +292,9 @@
     </div>
   </Form>
 </Modal>
+
+<style>
+  .highlighted {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+</style>

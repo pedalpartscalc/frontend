@@ -13,9 +13,13 @@
       <label for={name}>{label}</label>
     </div>
     <div>
-      <input {name} {type} {value} on:blur={onBlur} />
+      {#if type === "text"}
+        <input {name} type="text" bind:value on:blur={onBlur} />
+      {/if}
     </div>
   </div>
+{:else if type === "text"}
+  <input class="mx-2" {name} type="text" bind:value on:blur={onBlur} />
 {:else}
   <input class="mx-2" {name} {type} {value} on:blur={onBlur} />
 {/if}
