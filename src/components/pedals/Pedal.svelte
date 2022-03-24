@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Pedal } from "../../types";
-  import { modalPedal } from "../../store";
+  import { modalPedal, isAdminUser } from "../../store";
   import TextButton from "../lib/TextButton.svelte";
 
   export let pedal: Pedal;
@@ -37,12 +37,14 @@
     {/if}
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <TextButton
-      on:click={() => {
-        modalPedal.set(pedal);
-        openModal();
-      }}>Edit</TextButton
-    >
+    {#if $isAdminUser}
+      <TextButton
+        on:click={() => {
+          modalPedal.set(pedal);
+          openModal();
+        }}>Edit</TextButton
+      >
+    {/if}
     <!-- <button
       on:click={deletePart}
       class="px-2 border-none text-indigo-600 hover:text-indigo-900"

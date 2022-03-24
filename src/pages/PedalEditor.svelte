@@ -12,7 +12,7 @@
   import NavBar from "../components/NavBar.svelte";
   import Button from "../components/lib/Button.svelte";
 
-  import { modalPedal, pedals } from "../store";
+  import { modalPedal, pedals, isAdminUser } from "../store";
 
   const loadingError = writable(false);
 
@@ -100,15 +100,17 @@
           {/if}
         </div>
       </div>
-      <div class="py-4 inline-flex justify-center min-w-full sm:px-6 lg:px-8">
-        <Button
-          type="button"
-          on:click={() =>
-            getModal("pedal_edit_modal").open(() => {
-              modalPedal.set(null);
-            })}>Add New Pedal</Button
-        >
-      </div>
+      {#if $isAdminUser}
+        <div class="py-4 inline-flex justify-center min-w-full sm:px-6 lg:px-8">
+          <Button
+            type="button"
+            on:click={() =>
+              getModal("pedal_edit_modal").open(() => {
+                modalPedal.set(null);
+              })}>Add New Pedal</Button
+          >
+        </div>
+      {/if}
     </div>
   </div>
 </main>

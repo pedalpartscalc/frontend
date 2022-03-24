@@ -37,14 +37,6 @@
     }
   };
 
-  const adminGuard = (ctx, next) => {
-    if ($isAuthenticated && $isAdminUser) {
-      next();
-    } else {
-      window.location.assign("/home");
-    }
-  };
-
   const onRedirectCallback = (appState) => {
     window.history.replaceState(
       {},
@@ -130,7 +122,11 @@
       component={PartsBox}
       middleware={[authenticationGuard]}
     />
-    <Route path="/pedals" component={PedalEditor} middleware={[adminGuard]} />
+    <Route
+      path="/pedals"
+      component={PedalEditor}
+      middleware={[authenticationGuard]}
+    />
     <Route path="*" component={NotFound} />
   </Router>
 {/if}

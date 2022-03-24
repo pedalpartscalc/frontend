@@ -197,14 +197,12 @@
                 : inactiveRouteClasses}>Parts Box</a
             >
 
-            {#if $isAdminUser}
-              <a
-                href="/pedals"
-                class={$activeRoute.path === "/pedals"
-                  ? activeRouteClasses
-                  : inactiveRouteClasses}>Pedal Editor</a
-              >
-            {/if}
+            <a
+              href="/pedals"
+              class={$activeRoute.path === "/pedals"
+                ? activeRouteClasses
+                : inactiveRouteClasses}>Pedal Editor</a
+            >
           </div>
         </div>
       </div>
