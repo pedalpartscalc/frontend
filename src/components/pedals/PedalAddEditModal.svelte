@@ -71,7 +71,11 @@
     const matches = [];
     if (names.length < 2) return matches;
     for (let i = 1; i < names.length; i++) {
-      if (names[i] === names[i - 1] && !matches.includes(names[i])) {
+      if (
+        names[i] === names[i - 1] &&
+        !matches.includes(names[i]) &&
+        names[i] !== ""
+      ) {
         matches.push(names[i]);
       }
     }
