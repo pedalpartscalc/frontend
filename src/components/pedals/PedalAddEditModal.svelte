@@ -99,7 +99,7 @@
   };
 
   const deletePart = (id: number) => {
-    parts = parts.splice(id, 1);
+    parts.splice(id, 1);
   };
 
   const formDataToParts = (data: any): NewRequiredPart[] => {
