@@ -7,6 +7,7 @@ export enum PartType {
   IC = "IC",
   POTENTIOMETER = "Potentiometer",
   SWITCH = "Switch",
+  OP_AMP = "Op Amp",
 }
 
 export const PART_TYPES = Object.values(PartType);
