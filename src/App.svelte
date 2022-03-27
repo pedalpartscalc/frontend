@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
 
-  import Loader from "./components/loader.svelte";
+  import Loader from "./components/lib/Loader.svelte";
   import Route from "./components/pager/route.svelte";
   import Router from "./components/pager/router.svelte";
 

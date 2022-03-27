@@ -13,15 +13,9 @@
   import Button from "../components/lib/Button.svelte";
 
   import { modalPedal, pedals, isAdminUser } from "../store";
+  import DeletePedalModal from "../components/pedals/DeletePedalModal.svelte";
 
   const loadingError = writable(false);
-
-  const openModal = () => {
-    getModal("pedal_edit_modal").open(() => {
-      modalPedal.set(null);
-      console.log("here");
-    });
-  };
 
   let { login } = useAuth0;
 
@@ -93,7 +87,7 @@
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
                 {#each $pedals as pedal}
-                  <PedalComponent {pedal} {openModal} />
+                  <PedalComponent {pedal} />
                 {/each}
               </tbody>
             </table>
@@ -116,3 +110,4 @@
 </main>
 
 <PedalAddEditModal />
+<DeletePedalModal />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { derived, writable, Readable, Writable } from "svelte/store";
+  import { derived, writable, Readable } from "svelte/store";
   import _ from "lodash";
 
   import {
@@ -10,7 +10,16 @@
     NewRequiredPart,
     NewPedal,
   } from "../../types";
-  import { Validators, Form, Input, Error, Select, Modal } from "../lib";
+  import {
+    Validators,
+    Form,
+    Input,
+    Error,
+    Select,
+    Modal,
+    Loader,
+    Button,
+  } from "../lib";
   import { getModal } from "../lib/Modal.svelte";
   import { pedals, modalPedal } from "../../store";
   import {
@@ -19,8 +28,6 @@
     createRequiredPart,
     deleteRequiredPart,
   } from "../../services/api";
-  import Button from "../lib/Button.svelte";
-  import Loader from "../loader.svelte";
 
   const isLoading = writable(false);
 

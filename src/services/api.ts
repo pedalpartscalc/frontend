@@ -119,6 +119,13 @@ export const updatePedal = async (
   });
 };
 
+export const deletePedal = async (id: number): Promise<void> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/${id}`,
+    method: "DELETE",
+  });
+};
+
 export const createRequiredPart = async (
   pedal_id: number,
   part: NewRequiredPart

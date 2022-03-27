@@ -1,12 +1,24 @@
 <script lang="ts">
   import type { Pedal } from "../../types";
-  import { modalPedal, isAdminUser } from "../../store";
+  import { getModal } from "../lib/Modal.svelte";
+  import { modalPedal, isAdminUser, deleteModalPedal } from "../../store";
   import TextButton from "../lib/TextButton.svelte";
 
   export let pedal: Pedal;
-  export let openModal;
 
-  // maybe eventually add a pedal deletion thing, but need to add an "are you sure?" thing first
+  const openEditModal = () => {
+    modalPedal.set(pedal);
+    getModal("pedal_edit_modal").open(() => {
+      modalPedal.set(null);
+    });
+  };
+
+  const openDeleteModal = () => {
+    deleteModalPedal.set(pedal);
+    getModal("pedal_delete_modal").open(() => {
+      deleteModalPedal.set(null);
+    });
+  };
 </script>
 
 <tr>
@@ -37,18 +49,9 @@
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     {#if $isAdminUser}
-      <TextButton
-        on:click={() => {
-          modalPedal.set(pedal);
-          openModal();
-        }}>Edit</TextButton
-      >
+      <TextButton on:click={openEditModal}>Edit</TextButton>
+      <TextButton on:click={openDeleteModal}>Delete</TextButton>
     {/if}
-    <!-- <button
-      on:click={deletePart}
-      class="px-2 border-none text-indigo-600 hover:text-indigo-900"
-      >Delete</button
-    > -->
   </td>
 </tr>
 
