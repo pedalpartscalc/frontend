@@ -6,6 +6,7 @@
   import Input from "../lib/Input.svelte";
   import Error from "../lib/Error.svelte";
   import Select from "../lib/Select.svelte";
+  import Button from "../lib/Button.svelte";
   import Modal, { getModal } from "../lib/Modal.svelte";
   import { PART_TYPES } from "../../types";
   import { availableParts } from "../../store";
@@ -55,48 +56,51 @@
 </script>
 
 <Modal id="part_edit_modal">
-  <div class="flex flex-col content-center align-middle w-6/12">
+  <div class="flex flex-col content-center align-middle">
     <div class="text-lg text-center pb-2">
       {#if !!modalPart}Edit Part{:else}New Part{/if}
     </div>
     <Form {form} on:submit={onSubmit} bind:this={formEl}>
-      <div>
-        <Input label="Name" name="part_name" value={modalPart?.part_name} />
-        <Error
-          fieldName="name"
-          errorKey="required"
-          message="Name is required"
-        />
+      <div class="w-max flex flex-col gap-2">
+        <div>
+          <Input label="Name" name="part_name" value={modalPart?.part_name} />
+          <Error
+            fieldName="name"
+            errorKey="required"
+            message="Name is required"
+          />
+        </div>
+        <div>
+          <Select
+            label="Part Type"
+            name="part_kind"
+            value={modalPart?.part_kind}
+          >
+            {#each PART_TYPES as type}
+              <option value={type}>{type}</option>
+            {/each}
+          </Select>
+        </div>
+        <div>
+          <Input
+            label="Quantity"
+            name="quantity"
+            type="number"
+            value={modalPart?.quantity}
+          />
+          <Error
+            fieldName="quantity"
+            errorKey="required"
+            message="Quantity is required"
+          />
+        </div>
       </div>
-      <div>
-        <Select label="Part Type" name="part_kind" value={modalPart?.part_kind}>
-          {#each PART_TYPES as type}
-            <option value={type}>{type}</option>
-          {/each}
-        </Select>
-      </div>
-      <div>
-        <Input
-          label="Quantity"
-          name="quantity"
-          type="number"
-          value={modalPart?.quantity}
-        />
-        <Error
-          fieldName="quantity"
-          errorKey="required"
-          message="Quantity is required"
-        />
-      </div>
-      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button
-          class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-          type="submit">Save</button
-        >
-        <button
-          type="button"
-          class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-          on:click={() => getModal("part_edit_modal").close("")}>Cancel</button
+      <hr class="m-2" />
+      <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <Button color="blue-500" type="submit">Save</Button>
+        <Button
+          color="gray-400"
+          on:click={() => getModal("part_edit_modal").close("")}>Cancel</Button
         >
       </div>
     </Form>
