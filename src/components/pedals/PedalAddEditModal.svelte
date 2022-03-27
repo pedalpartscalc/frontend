@@ -10,12 +10,8 @@
     NewRequiredPart,
     NewPedal,
   } from "../../types";
-  import { Validators } from "../lib/Validators";
-  import Form from "../lib/Form.svelte";
-  import Input from "../lib/Input.svelte";
-  import Error from "../lib/Error.svelte";
-  import Select from "../lib/Select.svelte";
-  import Modal, { getModal } from "../lib/Modal.svelte";
+  import { Validators, Form, Input, Error, Select, Modal } from "../lib";
+  import { getModal } from "../lib/Modal.svelte";
   import { pedals, modalPedal } from "../../store";
   import {
     createPedal,
@@ -24,7 +20,6 @@
     deleteRequiredPart,
   } from "../../services/api";
   import Button from "../lib/Button.svelte";
-  import Part from "../parts/Part.svelte";
 
   let form = {
     name: {
