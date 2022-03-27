@@ -20,6 +20,9 @@
     deleteRequiredPart,
   } from "../../services/api";
   import Button from "../lib/Button.svelte";
+  import Loader from "../loader.svelte";
+
+  const isLoading = writable(false);
 
   let form = {
     name: {
@@ -196,19 +199,28 @@
 
   const onSubmit = async (e) => {
     if (e?.detail?.valid) {
+      isLoading.set(true);
       const data = e?.detail?.data;
-      console.log(data);
       if (!data) return;
+
       if (!$modalPedal) {
         await createNewPedal(data);
       } else {
         await saveToApi(data);
       }
+
       modalPedal.set(null);
+      isLoading.set(false);
       getModal("pedal_edit_modal").close("");
     } else {
       console.log("Invalid Form");
     }
+  };
+
+  const onCancel = () => {
+    modalPedal.set(null);
+    isLoading.set(false);
+    getModal("pedal_edit_modal").close("");
   };
 </script>
 
@@ -282,11 +294,14 @@
       <hr class="mx-2 mt-4" />
 
       <div class="mx-auto px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <Button color="blue-500" type="submit">Save</Button>
-        <Button
-          color="gray-400"
-          on:click={() => getModal("pedal_edit_modal").close("")}>Cancel</Button
-        >
+        {#if $isLoading}
+          <div class="mx-4">
+            <Loader />
+          </div>
+        {:else}
+          <Button color="blue-500" type="submit">Save</Button>
+        {/if}
+        <Button color="gray-400" on:click={onCancel}>Cancel</Button>
       </div>
     </div>
   </Form>

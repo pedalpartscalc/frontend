@@ -104,7 +104,7 @@
 </head>
 
 {#if $isLoading}
-  <div class="page-layout">
+  <div class="page-layout flex h-screen">
     <Loader />
   </div>
 {:else if $loadingError}
