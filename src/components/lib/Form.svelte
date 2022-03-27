@@ -40,6 +40,13 @@
 
   function validateForm(data: { [inputName: string]: any }): void {
     Object.keys(data).forEach((field) => validateField(field, data[field]));
+    // run validator for any validators that do not have a value
+    // `select`s and `checkbox`s do not have a value
+    Object.keys(form).forEach((field) => {
+      if (!Object.keys(data).includes(field)) {
+        validateField(field, "");
+      }
+    });
   }
 
   function onSubmit(e) {

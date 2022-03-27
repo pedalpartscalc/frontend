@@ -16,10 +16,13 @@
   import { createAvailablePart, updateAvailablePart } from "../../services/api";
 
   let form = {
-    name: {
+    part_name: {
       validators: [Validators.required],
     },
-    food: {
+    part_kind: {
+      validators: [Validators.required],
+    },
+    quantity: {
       validators: [Validators.required],
     },
   };
@@ -68,7 +71,7 @@
         <div>
           <Input label="Name" name="part_name" value={modalPart?.part_name} />
           <Error
-            fieldName="name"
+            fieldName="part_name"
             errorKey="required"
             message="Name is required"
           />
@@ -83,6 +86,11 @@
               <option value={type}>{type}</option>
             {/each}
           </Select>
+          <Error
+            fieldName="part_kind"
+            errorKey="required"
+            message="Part Type is required"
+          />
         </div>
         <div>
           <Input
