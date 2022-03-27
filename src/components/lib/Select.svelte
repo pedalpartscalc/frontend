@@ -4,6 +4,9 @@
   export let name;
   export let value = null;
   const { onBlur } = getContext("form");
+
+  const classes =
+    "shadow appearance-none rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline";
 </script>
 
 {#if !!label}
@@ -12,18 +15,13 @@
       <label for={name}>{label}</label>
     </div>
     <div>
-      <select
-        class="shadow appearance-none rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-        {name}
-        {value}
-        on:blur={onBlur}
-      >
+      <select class={classes} {name} {value} on:blur={onBlur}>
         <slot />
       </select>
     </div>
   </div>
 {:else}
-  <select class="mx-2" {name} {value} on:blur={onBlur}>
+  <select class="classes" {name} {value} on:blur={onBlur}>
     <slot />
   </select>
 {/if}
