@@ -254,7 +254,7 @@
         </div>
         {#each parts as part, i}
           <div
-            class="flex flex-row justify-around"
+            class="flex flex-row justify-around gap-2"
             class:highlighted={highlightedParts.includes(part.name)}
           >
             <Input name={`part_name_${i}`} bind:value={part.name} />

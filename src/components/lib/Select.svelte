@@ -21,7 +21,7 @@
     </div>
   </div>
 {:else}
-  <select class="classes" {name} {value} on:blur={onBlur}>
+  <select class={classes} {name} {value} on:blur={onBlur}>
     <slot />
   </select>
 {/if}
