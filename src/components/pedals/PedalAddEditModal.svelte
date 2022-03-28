@@ -31,6 +31,7 @@
   import TextButton from "../lib/TextButton.svelte";
 
   const isLoading = writable(false);
+  const generalError = writable(null);
 
   let form = {
     name: {
@@ -207,9 +208,21 @@
 
   const onSubmit = async (e) => {
     if (e?.detail?.valid) {
+      generalError.set(null);
       isLoading.set(true);
       const data = e?.detail?.data;
       if (!data) return;
+
+      console.log(data);
+      for (const [k, v] of Object.entries(data)) {
+        if (v === "" && k !== "build_doc_link") {
+          isLoading.set(false);
+          generalError.set(
+            "All fields must be filled out for the required parts."
+          );
+          return;
+        }
+      }
 
       if (!$modalPedal) {
         await createNewPedal(data);
@@ -292,6 +305,12 @@
           </div>
         {/each}
       </div>
+
+      {#if !!$generalError}
+        <div class="mx-auto mt-4 mb-2">
+          <p class="text-red-600">{$generalError}</p>
+        </div>
+      {/if}
 
       <div class="flex flex-row justify-center mt-4">
         <Button color="blue-500" on:click={addInput}>Add Part</Button>
