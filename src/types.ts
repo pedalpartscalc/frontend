@@ -67,3 +67,11 @@ export interface NewPedal {
   kind: PedalKind;
   build_doc_link?: string;
 }
+
+export interface ClosePedal {
+  id: number;
+  name: String;
+  kind: PedalKind;
+  short_parts: RequiredPart[];
+  required_parts: RequiredPart[];
+}

@@ -48,6 +48,9 @@
     {/if}
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+    <a class="text-ppc hover:text-ppc-light" href={`/pedals/${pedal.id}`}
+      >Details</a
+    >
     {#if $isAdminUser}
       <TextButton on:click={openEditModal}>Edit</TextButton>
       <TextButton on:click={openDeleteModal}>Delete</TextButton>

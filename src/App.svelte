@@ -11,6 +11,7 @@
   import PedalEditor from "./pages/PedalEditor.svelte";
   import Landing from "./pages/Landing.svelte";
   import AvailablePedals from "./pages/AvailablePedals.svelte";
+  import PedalDetail from "./pages/PedalDetail.svelte";
 
   import { isAdminUser } from "./store";
 
@@ -125,6 +126,11 @@
     <Route
       path="/pedals"
       component={PedalEditor}
+      middleware={[authenticationGuard]}
+    />
+    <Route
+      path="/pedals/:pedalId"
+      component={PedalDetail}
       middleware={[authenticationGuard]}
     />
     <Route path="*" component={NotFound} />
