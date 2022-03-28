@@ -69,6 +69,12 @@
       <hr class="m-2" />
       <div class="flex flex-row gap-4 w-full mx-auto justify-around">
         <Button color="gray-400" on:click={onClose}>Close</Button>
+        <Button
+          color="blue-500"
+          on:click={() => {
+            window.location.replace(`/pedals/${$modalClosePedal.id}`);
+          }}>View Pedal Details</Button
+        >
       </div>
     </div>
   {/if}
