@@ -6,6 +6,7 @@ import type {
   Pedal,
   NewPedal,
   NewRequiredPart,
+  ClosePedal,
 } from "../types";
 
 export const AccessControlLevel = {
@@ -157,4 +158,11 @@ export const isAdmin = async (): Promise<boolean> => {
   } catch (e: any) {
     return false;
   }
+};
+
+export const getClosestAvailablePedals = async (): Promise<ClosePedal[]> => {
+  return makeRequest({
+    url: `${apiServerUrl}/api/pedals/closest`,
+    method: "GET",
+  });
 };
