@@ -73,4 +73,5 @@ export interface ClosePedal {
   name: String;
   kind: PedalKind;
   short_parts: RequiredPart[];
+  required_parts: RequiredPart[];
 }

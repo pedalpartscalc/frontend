@@ -11,6 +11,7 @@
   import ClosePedal from "../components/pedals/ClosePedal.svelte";
 
   import { availablePedals } from "../store";
+  import ClosePedalPartsModal from "../components/pedals/ClosePedalPartsModal.svelte";
 
   const loading = writable(false);
   const closestAvailablePedals = writable([]);
@@ -153,3 +154,5 @@
     </div>
   {/if}
 </main>
+
+<ClosePedalPartsModal />
