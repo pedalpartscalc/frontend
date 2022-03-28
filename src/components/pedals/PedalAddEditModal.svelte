@@ -28,6 +28,7 @@
     createRequiredPart,
     deleteRequiredPart,
   } from "../../services/api";
+  import TextButton from "../lib/TextButton.svelte";
 
   const isLoading = writable(false);
 
@@ -104,7 +105,7 @@
   };
 
   const deletePart = (id: number) => {
-    parts.splice(id, 1);
+    parts = parts.filter((p, i) => i !== id);
   };
 
   const formDataToParts = (data: any): NewRequiredPart[] => {
@@ -283,12 +284,10 @@
               {/each}
             </Select>
             <Input name={`quantity_${i}`} type="number" value={part.quantity} />
-            <button
+            <TextButton
               on:click={() => {
                 deletePart(i);
-              }}
-              class="mx-2 border-none text-indigo-600 hover:text-indigo-900"
-              >Delete</button
+              }}>Delete</TextButton
             >
           </div>
         {/each}
