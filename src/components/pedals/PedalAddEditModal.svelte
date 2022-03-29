@@ -74,7 +74,6 @@
   let highlightedParts = [];
 
   const findMatches = (names) => {
-    console.log(names);
     const matches = [];
     if (names.length < 2) return matches;
     for (let i = 1; i < names.length; i++) {
@@ -123,7 +122,7 @@
       if (partKey === "quantity") {
         partsData[partNum][partKey] = parseInt(v as string);
       } else {
-        partsData[partNum][partKey] = v;
+        partsData[partNum][partKey] = (v as String).trim();
       }
     }
 
@@ -158,9 +157,9 @@
 
     // hit API
     const pedalData: NewPedal = {
-      name: data.name,
-      kind: data.kind,
-      build_doc_link: data.build_doc_link,
+      name: data.name.trim(),
+      kind: data.kind.trim(),
+      build_doc_link: data.build_doc_link.trim(),
     };
     if (!_.isEqual(pedalData, fullPedalToNew($modalPedal))) {
       apiRequests.push(updatePedal($modalPedal.id, pedalData));
@@ -192,9 +191,9 @@
 
   const createNewPedal = async (data) => {
     const pedalData: NewPedal = {
-      name: data.name,
-      kind: data.kind,
-      build_doc_link: data.build_doc_link,
+      name: data.name.trim(),
+      kind: data.kind.trim(),
+      build_doc_link: data.build_doc_link.trim(),
     };
 
     pedals.update((p) => [...p, pedalData]);
