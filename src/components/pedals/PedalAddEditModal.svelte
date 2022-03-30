@@ -28,8 +28,10 @@
     createRequiredPart,
     deleteRequiredPart,
   } from "../../services/api";
+  import TextButton from "../lib/TextButton.svelte";
 
   const isLoading = writable(false);
+  const generalError = writable(null);
 
   let form = {
     name: {
@@ -72,7 +74,6 @@
   let highlightedParts = [];
 
   const findMatches = (names) => {
-    console.log(names);
     const matches = [];
     if (names.length < 2) return matches;
     for (let i = 1; i < names.length; i++) {
@@ -104,7 +105,7 @@
   };
 
   const deletePart = (id: number) => {
-    parts.splice(id, 1);
+    parts = parts.filter((p, i) => i !== id);
   };
 
   const formDataToParts = (data: any): NewRequiredPart[] => {
@@ -121,7 +122,7 @@
       if (partKey === "quantity") {
         partsData[partNum][partKey] = parseInt(v as string);
       } else {
-        partsData[partNum][partKey] = v;
+        partsData[partNum][partKey] = (v as String).trim();
       }
     }
 
@@ -156,9 +157,9 @@
 
     // hit API
     const pedalData: NewPedal = {
-      name: data.name,
-      kind: data.kind,
-      build_doc_link: data.build_doc_link,
+      name: data.name.trim(),
+      kind: data.kind.trim(),
+      build_doc_link: data.build_doc_link.trim(),
     };
     if (!_.isEqual(pedalData, fullPedalToNew($modalPedal))) {
       apiRequests.push(updatePedal($modalPedal.id, pedalData));
@@ -190,9 +191,9 @@
 
   const createNewPedal = async (data) => {
     const pedalData: NewPedal = {
-      name: data.name,
-      kind: data.kind,
-      build_doc_link: data.build_doc_link,
+      name: data.name.trim(),
+      kind: data.kind.trim(),
+      build_doc_link: data.build_doc_link.trim(),
     };
 
     pedals.update((p) => [...p, pedalData]);
@@ -206,9 +207,21 @@
 
   const onSubmit = async (e) => {
     if (e?.detail?.valid) {
+      generalError.set(null);
       isLoading.set(true);
       const data = e?.detail?.data;
       if (!data) return;
+
+      console.log(data);
+      for (const [k, v] of Object.entries(data)) {
+        if (v === "" && k !== "build_doc_link") {
+          isLoading.set(false);
+          generalError.set(
+            "All fields must be filled out for the required parts."
+          );
+          return;
+        }
+      }
 
       if (!$modalPedal) {
         await createNewPedal(data);
@@ -283,16 +296,20 @@
               {/each}
             </Select>
             <Input name={`quantity_${i}`} type="number" value={part.quantity} />
-            <button
+            <TextButton
               on:click={() => {
                 deletePart(i);
-              }}
-              class="mx-2 border-none text-indigo-600 hover:text-indigo-900"
-              >Delete</button
+              }}>Delete</TextButton
             >
           </div>
         {/each}
       </div>
+
+      {#if !!$generalError}
+        <div class="mx-auto mt-4 mb-2">
+          <p class="text-red-600">{$generalError}</p>
+        </div>
+      {/if}
 
       <div class="flex flex-row justify-center mt-4">
         <Button color="blue-500" on:click={addInput}>Add Part</Button>

@@ -47,7 +47,11 @@
     if (e?.detail?.valid) {
       const data = e?.detail?.data;
       if (!data) return;
+
+      data.part_name = data.part_name.trim();
+      data.part_kind = data.part_kind.trim();
       data.quantity = parseInt(data.quantity);
+
       if (!modalPart) {
         await createNewPart(data);
       } else {
