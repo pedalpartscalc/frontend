@@ -54,7 +54,7 @@
           {#if $loading}
             <div />
           {:else if $availablePedals.length === 0}
-            <div class="align-center justify-center text-center">
+            <div class="align-center justify-center text-center my-4 mx-2">
               You can't build any pedals with your components. Go to the <a
                 href="/parts"
                 class="text-gradient
