@@ -383,7 +383,7 @@
     </div>
   </section>
   <section id="features">
-    <div class="py-8 overflow-hidden lg:py-8 dark:bg-background_dark">
+    <div class="pt-8 pb-16 overflow-hidden dark:bg-background_dark">
       <div
         class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl"
       >
@@ -452,79 +452,112 @@
                   sm:leading-9
                 "
             >
-              Create Recurring Tasks
+              Keep a Digital Parts Box
             </h4>
             <p class="mt-3 text-lg leading-7 text-gray-500 dark:text-gray-300">
-              Tasks can repeat by your car's mileage, time, or both.
+              Add the type and quantity of the components you have on hand to
+              your parts box.
             </p>
 
             <!-- <ul class="mt-10">
-                <li>
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                          <path
-                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">Utility-first CSS</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Tailwind provides low-level utility classes that let you style emails much faster than writing
-                        inline CSS.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mt-10">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                          <path
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">Component-friendly</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Some projects are complex, so you can extract component classes from repeated utility patterns, if
-                        you really need to.
-                      </p>
+              <li>
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                        />
+                      </svg>
                     </div>
                   </div>
-                </li>
-                <li class="mt-10">
-                  <div class="flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                          <path
-                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="ml-4">
-                      <h5 class="text-lg leading-6 font-medium text-gray-900">Fully customizable</h5>
-                      <p class="mt-2 text-base leading-6 text-gray-500">
-                        Easily create or bring in your own email design system, keeping everyone in your team on-brand.
-                      </p>
+                  <div class="ml-4">
+                    <h5 class="text-lg leading-6 font-medium text-gray-900">
+                      Utility-first CSS
+                    </h5>
+                    <p class="mt-2 text-base leading-6 text-gray-500">
+                      Tailwind provides low-level utility classes that let you
+                      style emails much faster than writing inline CSS.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="mt-10">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                        />
+                      </svg>
                     </div>
                   </div>
-                </li>
-              </ul> -->
+                  <div class="ml-4">
+                    <h5 class="text-lg leading-6 font-medium text-gray-900">
+                      Component-friendly
+                    </h5>
+                    <p class="mt-2 text-base leading-6 text-gray-500">
+                      Some projects are complex, so you can extract component
+                      classes from repeated utility patterns, if you really need
+                      to.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="mt-10">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-l-ocean-light text-white"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h5 class="text-lg leading-6 font-medium text-gray-900">
+                      Fully customizable
+                    </h5>
+                    <p class="mt-2 text-base leading-6 text-gray-500">
+                      Easily create or bring in your own email design system,
+                      keeping everyone in your team on-brand.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul> -->
           </div>
 
           <div class="mt-10 mx-4 relative lg:mt-0">
@@ -586,7 +619,7 @@
               <div
                 class="overflow-x-scroll sm:overflow-hidden dark:text-gray-200"
               >
-                <img src="/static/tasksScreenshot.png" />
+                <img src="parts_box_screenshot.png" alt="" />
               </div>
             </div>
           </div>
@@ -655,12 +688,13 @@
                     sm:leading-9
                   "
               >
-                Keep Track of Fuel Usage and Mileage
+                Get a List of Pedals You Can Build
               </h4>
               <p
                 class="mt-3 text-lg leading-7 text-gray-500 dark:text-gray-300"
               >
-                Get the stats.
+                If you don't have enough parts to build a bunch of pedals,
+                you'll get a list of pedals that only need a few extra parts.
               </p>
 
               <ul class="mt-10">
@@ -675,7 +709,7 @@
                             h-12
                             w-12
                             rounded-md
-                            bg-gradient-l-ocean-light
+                            bg-gradient-l-orange-dark
                             text-white
                           "
                       >
@@ -730,7 +764,7 @@
                             h-12
                             w-12
                             rounded-md
-                            bg-gradient-l-ocean-light
+                            bg-gradient-l-orange-dark
                             text-white
                           "
                       >
@@ -836,8 +870,106 @@
                 <div
                   class="overflow-x-scroll sm:overflow-hidden dark:text-gray-200"
                 >
-                  <img src="/static/statsScreenshot.png" />
+                  <img src="available_pedals_screenshot.png" alt="" />
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="
+              relative
+              mt-16
+              lg:mt-24
+              lg:grid lg:grid-cols-2
+              lg:gap-8
+              lg:items-center
+            "
+        >
+          <div class="relative">
+            <h4
+              class="
+                  text-2xl
+                  leading-8
+                  font-extrabold
+                  tracking-wide
+                  text-gray-900
+                  dark:text-gray-200
+                  tracking-tight
+                  sm:text-3xl
+                  sm:leading-9
+                "
+            >
+              Get a Bill of Materials for any Pedal
+            </h4>
+            <p class="mt-3 text-lg leading-7 text-gray-500 dark:text-gray-300">
+              See the list of parts that are missing from your parts box to
+              build a pedal, as well as the full bill of materials for that
+              pedal.
+            </p>
+          </div>
+
+          <div class="mt-10 mx-4 relative lg:mt-0">
+            <svg
+              class="
+                  absolute
+                  left-1/2
+                  transform
+                  -translate-x-1/2
+                  translate-y-16
+                  lg:hidden
+                "
+              width="784"
+              height="404"
+              fill="none"
+              viewBox="0 0 784 404"
+            >
+              <defs>
+                <pattern
+                  id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
+                  x="0"
+                  y="0"
+                  width="20"
+                  height="20"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect
+                    x="0"
+                    y="0"
+                    width="4"
+                    height="4"
+                    class="text-gray-200 dark:text-gray-500"
+                    fill="currentColor"
+                  />
+                </pattern>
+              </defs>
+              <rect
+                width="784"
+                height="404"
+                fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)"
+              />
+            </svg>
+            <div
+              class="
+                  bg-white
+                  dark:bg-background_med
+                  rounded-lg
+                  shadow-2xl
+                  max-w-3xl 
+                  max-h-2xl
+                  sm:max-h-full
+                  overflow-hidden
+                  mx-2
+                  sm:mx-auto
+                  p-6
+                  relative
+                "
+            >
+              <div
+                class="overflow-x-scroll sm:overflow-hidden dark:text-gray-200"
+              >
+                <img src="close_pedal_screenshot.png" alt="" />
               </div>
             </div>
           </div>
