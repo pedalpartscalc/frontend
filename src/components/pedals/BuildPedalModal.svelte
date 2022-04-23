@@ -1,16 +1,18 @@
 <script lang="ts">
   import { Button, Input, Validators } from "../lib";
   import Modal, { getModal } from "../lib/Modal.svelte";
-  import { modalBuildPedal } from "../../store";
+  import { availableParts, modalBuildPedal } from "../../store";
   import Form from "../lib/Form.svelte";
   import Checkbox from "../lib/Checkbox.svelte";
+  import { createAvailablePart } from "../../services/api";
+  import type { NewAvailablePart, RequiredPart } from "../../types";
 
   const onClose = () => {
     getModal("build_pedal_parts").close();
     modalBuildPedal.set(null);
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     const data = e?.detail?.data;
 
     const quant_bought = {};
@@ -22,11 +24,27 @@
       const partKey = k.replace("_" + partNum, "");
       if (partKey === "bought") {
         // the checkbox is checked, now get the quantity
-        quant_bought[partNum] = data["quant_" + partNum];
+        quant_bought[partNum] = parseInt(data["quant_" + partNum]);
       }
     }
 
-    // TODO: for each of the quant bought, add a new part to the parts box (or update the quantity of the existing ones)
+    const savePartsRequests = [];
+    for (const [partNum, quant] of Object.entries(quant_bought)) {
+      const requiredPart: RequiredPart = $modalBuildPedal.short_parts.find(
+        (p: RequiredPart) => p.id === parseInt(partNum)
+      );
+      console.log(quant);
+      const partData = {
+        part_name: requiredPart.part_name,
+        part_kind: requiredPart.part_kind,
+        quantity: quant,
+      };
+      availableParts.update((parts) => [...parts, data]);
+      savePartsRequests.push(createAvailablePart(partData as NewAvailablePart));
+    }
+    await Promise.all(savePartsRequests);
+
+    onClose();
   };
 
   let form = {
