@@ -12,6 +12,7 @@
 
   import { availablePedals } from "../store";
   import ClosePedalPartsModal from "../components/pedals/ClosePedalPartsModal.svelte";
+  import BuildPedalPartsModal from "../components/pedals/BuildPedalModal.svelte";
 
   const loading = writable(false);
   const closestAvailablePedals = writable([]);
@@ -140,6 +141,11 @@
                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >View Needed Parts</th
                   >
+                  <th
+                    scope="col"
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >Build the Pedal</th
+                  >
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
@@ -156,3 +162,4 @@
 </main>
 
 <ClosePedalPartsModal />
+<BuildPedalPartsModal />

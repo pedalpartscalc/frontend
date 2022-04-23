@@ -9,3 +9,4 @@ export const deleteModalPedal: Writable<Pedal | null> = writable(null);
 export const availablePedals = writable([]);
 export const isAdminUser = writable(false);
 export const modalClosePedal = writable(null);
+export const modalBuildPedal = writable(null);

@@ -2,7 +2,7 @@
   import type { ClosePedal } from "../../types";
   import { TextButton } from "../lib";
   import { getModal } from "../lib/Modal.svelte";
-  import { modalClosePedal } from "../../store";
+  import { modalClosePedal, modalBuildPedal } from "../../store";
 
   export let pedal: ClosePedal;
 
@@ -10,6 +10,13 @@
     modalClosePedal.set(pedal);
     getModal("close_pedal_parts").open(() => {
       modalClosePedal.set(null);
+    });
+  };
+
+  const onBuildOpen = () => {
+    modalBuildPedal.set(pedal);
+    getModal("build_pedal_parts").open(() => {
+      modalBuildPedal.set(null);
     });
   };
 </script>
@@ -28,5 +35,8 @@
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
     <TextButton on:click={onOpen}>Parts List</TextButton>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    <TextButton on:click={onBuildOpen}>Parts Checklist</TextButton>
   </td>
 </tr>
